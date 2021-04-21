@@ -54,7 +54,8 @@ p {
 }
 
 .main-banner #banner-img {
-  max-width: 100%;
+  max-width: 960px;
+  width: 100%;
   height: auto;
 }
 
@@ -156,7 +157,7 @@ html {
 
 
 @media screen and (max-width: 441px) {
-  
+
 }
 
 @media screen and (max-width: 1080px) {
