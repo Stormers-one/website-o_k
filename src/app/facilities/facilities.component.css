@@ -100,6 +100,19 @@ a:hover {
   color: #125699;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
 
 
 /* Responsive Styles */

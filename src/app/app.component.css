@@ -44,28 +44,6 @@ p {
   opacity: 0.4;
 }
 
-.main-banner{
-  /* width: 100%; */
-  margin: 82px auto 32px;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
-  align-content: center;
-}
-
-.main-banner #banner-img {
-  max-width: 960px;
-  width: 100%;
-  height: auto;
-}
-
-figure figcaption {
-  text-align: right;
-  position: relative; 
-  
-}
-
-
 
 .content {
   display: flex;
