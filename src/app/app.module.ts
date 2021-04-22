@@ -9,6 +9,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { CustomerSupportComponent } from './customer-support/customer-support.component';
 import { FareUpdateComponent } from './fare-update/fare-update.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { MainBannerComponent } from './main-banner/main-banner.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
     ScheduleComponent,
     CustomerSupportComponent,
     FareUpdateComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    MainBannerComponent
   ],
   imports: [
     BrowserModule,
