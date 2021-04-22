@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Deployment on github-pages
 
-Visit site url: https://github.com/Stormers-one/website-o_k
+Visit site url: https://stormers-one.github.io/website-o_k/
 
 ## Development server
 
