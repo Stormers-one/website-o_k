@@ -85,10 +85,6 @@ svg.material-icons:not(:last-child) {
   position: relative;
 }
 
-.card.card.highlight-card span {
-  margin-left: 60px;
-}
-
 a,
 a:visited,
 a:hover {

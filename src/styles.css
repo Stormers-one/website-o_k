@@ -35,7 +35,7 @@ html {
   position: absolute;
 }
 .back-button-container button{
-  border-radius: 15px;
+  border-radius: 8px;
   border-width: 0px;
   background-color: rgba(32, 168, 32, 0.678);
   height: 40px;
