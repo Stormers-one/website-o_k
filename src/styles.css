@@ -40,6 +40,17 @@ html {
   background-color: rgba(32, 168, 32, 0.678);
   height: 40px;
   width: 100px;
+  color: antiquewhite;
+}
+
+.back-button-container button {
+  cursor: pointer;
+}
+
+.back-button-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(57, 73, 51, 0.35);
+  color: beige;
 }
 
 .container-row h1{
