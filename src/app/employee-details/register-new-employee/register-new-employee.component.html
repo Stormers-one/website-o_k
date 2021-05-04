@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="container-row">
+        <div class="back-button-container">
+            <button routerLink="/" routerLinkActive="active" (click)="goBack()">back</button>
+        </div>
+        <div class="container">
+            <h1>Register Details of New Employee</h1>
+        </div>
+    </div>
+    
+    <!-- Develop this div appropriately -->
+    <div>
+        <form  action="/action_page.php">
+            <label for="new_name"><br><b>Enter Name</b> (Required)</label><br>
+            <input type="text" id="new_name" name="new_name"><br><br>
+            <label for="phone"><b>Enter Phone number </b>(Required)</label><br>
+            <input type="text" id="phone" name="phone"><br><br>
+            <label for="mail"><b>Enter Email </b>(Required)</label><br>
+            <input type="email" id="mail" name="mail"><br><br>
+            <label for="pswd"><b>Enter Password </b>(Required)</label><br>
+            <input type="password" id="pswd" name="pswd"><br><br>
+            <input type="submit" routerLink="/" routerLinkActive="active" (click)="goBack()" value="Submit">
+        </form>
+    </div>
+</div>

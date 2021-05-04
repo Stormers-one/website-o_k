@@ -8,6 +8,8 @@ import { CustomerSupportComponent } from './customer-support/customer-support.co
 import { FareUpdateComponent } from './fare-update/fare-update.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { MainBannerComponent } from './main-banner/main-banner.component';
+import { SearchEmployeeComponent } from './employee-details/search-employee/search-employee.component';
+import { RegisterNewEmployeeComponent } from './employee-details/register-new-employee/register-new-employee.component';
 
 const routes: Routes = [
   { path: '', component: FacilitiesComponent },
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'fareUpdate', component: FareUpdateComponent },
   { path: 'employeeDetails', component: EmployeeDetailsComponent },
   { path: 'mainBanner', component: MainBannerComponent },
+  { path: 'searchEmployee', component: SearchEmployeeComponent },
+  { path: 'registerEmployee', component: RegisterNewEmployeeComponent },
   // { path: '**', component: PageNotFoundComponent },
 ];
 

@@ -10,6 +10,8 @@ import { CustomerSupportComponent } from './customer-support/customer-support.co
 import { FareUpdateComponent } from './fare-update/fare-update.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { MainBannerComponent } from './main-banner/main-banner.component';
+import { SearchEmployeeComponent } from './employee-details/search-employee/search-employee.component';
+import { RegisterNewEmployeeComponent } from './employee-details/register-new-employee/register-new-employee.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { MainBannerComponent } from './main-banner/main-banner.component';
     CustomerSupportComponent,
     FareUpdateComponent,
     EmployeeDetailsComponent,
-    MainBannerComponent
+    MainBannerComponent,
+    SearchEmployeeComponent,
+    RegisterNewEmployeeComponent
   ],
   imports: [
     BrowserModule,
