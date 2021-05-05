@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ScheduleComponent implements OnInit {
   goToPage(link:string){
-    this.router.navigate(['/'+link]).then(success => console.log('navigation success?' , success))
+    this.router.navigate(['/facilities/schedule/'+link]).then(success => console.log('navigation success?' , success))
     .catch(console.error);   
   }
   goBack(){
