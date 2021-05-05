@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="container-row">
+        <div class="back-button-container">
+            <button routerLink="/" routerLinkActive="active" (click)="goBack()">back</button>
+        </div>
+        <div class="container">
+            <h1>Fare Update</h1>
+        </div>
+    </div>
+
+    <!-- Develop this div appropriately -->
+    <div class="container">
+        <div class="fareupdation-banner">
+            <figure>
+                <a href="https://www.newgenapps.com/wp-content/uploads/2020/04/Navigator-Navigation-Google-Maps-Map-Location-Gps-2049643.jpg" target="_blank">
+                    <img id="t-img" alt="Fare Updation" src="assets/images/Navigator.jpg" width="304" height="328">
+                </a>
+            </figure>
+        </div>
+    </div>
+    <form  action="/action_page.php">
+        <label for="minprice"><br><b>Revised minimum price</b> (in Rupees)</label><br>
+        <input type="number" step="any" onfocus="this.value=''" id="Bnum" name="Bnum"><br><br>
+        <label for="price/km"><b>Price/KM </b>(in Rupees)</label><br>
+        <input type="number" step="any" onfocus="this.value=''" id="from" name="from"><br><br><br>
+        <input type="submit" routerLink="/" routerLinkActive="active" (click)="goBack()" value="Update">
+    </form>
+</div>
