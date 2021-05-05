@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class EmployeeDetailsComponent implements OnInit {
   goToPage(link:string){
-    this.router.navigate(['/'+link]).then(success => console.log('navigation success?' , success))
+    this.router.navigate(['/facilities/employeeDetails/'+link]).then(success => console.log('navigation success?' , success))
     .catch(console.error);   
   }
   goBack(){
