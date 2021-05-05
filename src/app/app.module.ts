@@ -12,6 +12,8 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { MainBannerComponent } from './main-banner/main-banner.component';
 import { SearchEmployeeComponent } from './employee-details/search-employee/search-employee.component';
 import { RegisterNewEmployeeComponent } from './employee-details/register-new-employee/register-new-employee.component';
+import { DisplayScheduleComponent } from './schedule/display-schedule/display-schedule.component';
+import { GenerateNewScheduleComponent } from './schedule/generate-new-schedule/generate-new-schedule.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { RegisterNewEmployeeComponent } from './employee-details/register-new-em
     EmployeeDetailsComponent,
     MainBannerComponent,
     SearchEmployeeComponent,
-    RegisterNewEmployeeComponent
+    RegisterNewEmployeeComponent,
+    DisplayScheduleComponent,
+    GenerateNewScheduleComponent
   ],
   imports: [
     BrowserModule,

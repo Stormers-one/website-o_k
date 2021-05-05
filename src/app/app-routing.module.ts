@@ -10,6 +10,8 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { MainBannerComponent } from './main-banner/main-banner.component';
 import { SearchEmployeeComponent } from './employee-details/search-employee/search-employee.component';
 import { RegisterNewEmployeeComponent } from './employee-details/register-new-employee/register-new-employee.component';
+import { DisplayScheduleComponent } from './schedule/display-schedule/display-schedule.component';
+import { GenerateNewScheduleComponent } from './schedule/generate-new-schedule/generate-new-schedule.component';
 
 const routes: Routes = [
   { path: '', component: FacilitiesComponent },
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'mainBanner', component: MainBannerComponent },
   { path: 'searchEmployee', component: SearchEmployeeComponent },
   { path: 'registerEmployee', component: RegisterNewEmployeeComponent },
+  { path: 'displaySchedule', component: DisplayScheduleComponent },
+  { path: 'generateNewSchedule', component: GenerateNewScheduleComponent },
   // { path: '**', component: PageNotFoundComponent },
 ];
 
