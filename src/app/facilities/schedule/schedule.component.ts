@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DisplayScheduleComponent } from '../schedule/display-schedule/display-schedule.component';
-import { GenerateNewScheduleComponent } from '../schedule/generate-new-schedule/generate-new-schedule.component';
+import { DisplayScheduleComponent } from './display-schedule/display-schedule.component';
+import { GenerateNewScheduleComponent } from './generate-new-schedule/generate-new-schedule.component';
 import { Router } from '@angular/router';  
 
 @Component({
