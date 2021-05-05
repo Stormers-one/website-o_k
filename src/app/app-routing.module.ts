@@ -10,10 +10,15 @@ import { EmployeeDetailsComponent } from './facilities/employee-details/employee
 import { MainBannerComponent } from './main-banner/main-banner.component';
 import { SearchEmployeeComponent } from './facilities/employee-details/search-employee/search-employee.component';
 import { RegisterNewEmployeeComponent } from './facilities/employee-details/register-new-employee/register-new-employee.component';
+import { DisplayScheduleComponent } from './facilities/schedule/display-schedule/display-schedule.component'
+import { GenerateNewScheduleComponent } from './facilities/schedule/generate-new-schedule/generate-new-schedule.component'
 
 const routes: Routes = [
   { path: '', component: FacilitiesComponent },
   { path: 'facilities/tracking', component: TrackingComponent },
+  { path: 'facilities/schedule', component: ScheduleComponent },
+  { path: 'facilities/schedule/display-schedule', component: DisplayScheduleComponent },
+  { path: 'facilities/schedule/generate-schedule', component: GenerateNewScheduleComponent },
   { path: 'facilities/schedule', component: ScheduleComponent },
   { path: 'facilities/customerSupport', component: CustomerSupportComponent },
   { path: 'facilities/fareUpdate', component: FareUpdateComponent },
@@ -21,6 +26,7 @@ const routes: Routes = [
   { path: 'mainBanner', component: MainBannerComponent },
   { path: 'facilities/employeeDetails/searchEmployee', component: SearchEmployeeComponent },
   { path: 'facilities/employeeDetails/registerEmployee', component: RegisterNewEmployeeComponent },
+
   // { path: '**', component: PageNotFoundComponent },
 ];
 
