@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; 
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-search-employee',
@@ -11,7 +12,10 @@ export class SearchEmployeeComponent implements OnInit {
     this.router.navigate(['/']).then(success => console.log('navigation success?' , success))
     .catch(console.error);   
   }
-  constructor(private router: Router,) { }
+  goBackOnce() {
+    this._location.back();
+  }
+  constructor(private router: Router,private _location: Location) { }
 
   ngOnInit(): void {
   }

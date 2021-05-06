@@ -17,6 +17,10 @@ export class ScheduleComponent implements OnInit {
     this.router.navigate(['/']).then(success => console.log('navigation success?' , success))
     .catch(console.error);   
   }
+  goBackOnce(){
+    this.router.navigate(['../']).then(success => console.log('navigation success?' , success))
+    .catch(console.error);   
+  }
   constructor(private router: Router,) {}
 
   ngOnInit(): void {
