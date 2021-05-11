@@ -1,3 +1,6 @@
+import { PrivateConfig } from '../private_config'
+
 export const environment = {
-  production: true
+  production: true,
+  firebase: PrivateConfig.firebase
 };
