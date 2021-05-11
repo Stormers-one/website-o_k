@@ -19,7 +19,7 @@ export class EmployeeService {
     return this.document;
   }
   registerEmployee(employee: Employee) {
-    return this.document.add({ ...employee });
+    return this.document.doc(employee.email).set({ ...employee });
   }
   updateEmployee(id: string, employee: Employee): Promise<void> {
     return this.document.doc(id).update(employee);
