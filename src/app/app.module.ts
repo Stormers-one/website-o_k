@@ -12,6 +12,15 @@ import { EmployeeDetailsComponent } from './facilities/employee-details/employee
 import { MainBannerComponent } from './main-banner/main-banner.component';
 import { SearchEmployeeComponent } from './facilities/employee-details/search-employee/search-employee.component';
 import { RegisterNewEmployeeComponent } from './facilities/employee-details/register-new-employee/register-new-employee.component';
+import { FormsModule } from '@angular/forms';
+
+// Firebase integration
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -28,7 +37,12 @@ import { RegisterNewEmployeeComponent } from './facilities/employee-details/regi
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase, 'website-o_k'),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    FormsModule,
+    AngularFireStorageModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

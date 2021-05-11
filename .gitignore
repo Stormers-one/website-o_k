@@ -46,4 +46,5 @@ testem.log
 Thumbs.db
 
 # Config/keys
-config_private.js
+src/environments/environment.prod.ts
+src/environments/environment.ts
