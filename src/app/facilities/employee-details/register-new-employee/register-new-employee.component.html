@@ -12,13 +12,13 @@
     <div>
         <form  action="/action_page.php">
             <label for="new_name"><br><b>Enter Name</b> (Required)</label><br>
-            <input type="text" id="new_name" name="new_name"><br><br>
+            <input type="text" id="new_name" name="new_name" required><br><br>
             <label for="phone"><b>Enter Phone number </b>(Required)</label><br>
             <input type="text" id="phone" name="phone"><br><br>
             <label for="mail"><b>Enter Email </b>(Required)</label><br>
-            <input type="email" id="mail" name="mail"><br><br>
+            <input type="email" id="mail" name="mail" required><br><br>
             <label for="pswd"><b>Enter Password </b>(Required)</label><br>
-            <input type="password" id="pswd" name="pswd"><br><br>
+            <input type="password" id="pswd" name="pswd" required><br><br>
             <input type="submit" routerLink="/" routerLinkActive="active" (click)="goBack()" value="Submit">
         </form>
     </div>

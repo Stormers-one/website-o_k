@@ -12,9 +12,9 @@
     <div class="container">
         <form  action="/action_page.php">
             <label for="name"><br><b>Employee Name</b> (Required)</label><br>
-            <input type="text" id="name" name="name"><br><br>
+            <input type="text" id="name" name="name" required><br><br>
             <label for="EID"><b>Employee ID </b>(Required)</label><br>
-            <input type="text" id="EID" name="EID"><br><br><br>
+            <input type="text" id="EID" name="EID" required><br><br><br>
             <input type="submit" routerLink="/" routerLinkActive="active" (click)="goBack()" value="View Employee Details">
         </form>
     </div>

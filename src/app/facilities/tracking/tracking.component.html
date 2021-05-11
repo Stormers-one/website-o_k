@@ -19,11 +19,11 @@
         </div>
         <form  action="/action_page.php">
             <label for="Bnum"><b>Bus Number</b> (Required)</label><br>
-            <input type="text" id="Bnum" name="Bnum"><br><br>
+            <input type="text" id="Bnum" name="Bnum" required><br><br>
             <label for="from"><b>From </b>(Required)</label><br>
-            <input type="text" id="from" name="from"><br><br>
+            <input type="text" id="from" name="from" required><br><br>
             <label for="to"><b>To</b> (Required)</label><br>
-            <input type="text" id="to" name="to"><br><br><br>
+            <input type="text" id="to" name="to"required><br><br><br>
             <input type="submit" value="Submit" routerLink="/" routerLinkActive="active" (click)="goBack()">
         </form>   
     </div>
