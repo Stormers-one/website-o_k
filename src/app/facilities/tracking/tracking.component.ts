@@ -11,6 +11,10 @@ export class TrackingComponent implements OnInit {
     this.router.navigate(['/']).then(success => console.log('navigation success?' , success))
     .catch(console.error);   
   }
+  goToPage(link:string){
+    this.router.navigate(['/facilities/tracking/'+link]).then(success => console.log('navigation success?' , success))
+    .catch(console.error);   
+  }
   constructor(private router: Router,) {}
 
 

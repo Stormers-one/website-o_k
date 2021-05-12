@@ -12,10 +12,12 @@ import { SearchEmployeeComponent } from './facilities/employee-details/search-em
 import { RegisterNewEmployeeComponent } from './facilities/employee-details/register-new-employee/register-new-employee.component';
 import { DisplayScheduleComponent } from './facilities/schedule/display-schedule/display-schedule.component'
 import { GenerateNewScheduleComponent } from './facilities/schedule/generate-new-schedule/generate-new-schedule.component'
+import { MapComponent } from './facilities/tracking/map/map.component';
 
 const routes: Routes = [
   { path: '', component: FacilitiesComponent },
   { path: 'facilities/tracking', component: TrackingComponent },
+  { path: 'facilities/tracking/map', component: MapComponent },
   { path: 'facilities/schedule', component: ScheduleComponent },
   { path: 'facilities/schedule/display-schedule', component: DisplayScheduleComponent },
   { path: 'facilities/schedule/generate-schedule', component: GenerateNewScheduleComponent },
@@ -26,6 +28,7 @@ const routes: Routes = [
   { path: 'mainBanner', component: MainBannerComponent },
   { path: 'facilities/employeeDetails/searchEmployee', component: SearchEmployeeComponent },
   { path: 'facilities/employeeDetails/registerEmployee', component: RegisterNewEmployeeComponent },
+
 
   // { path: '**', component: PageNotFoundComponent },
 ];

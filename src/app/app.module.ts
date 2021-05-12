@@ -21,6 +21,7 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { MapComponent } from './facilities/tracking/map/map.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     EmployeeDetailsComponent,
     MainBannerComponent,
     SearchEmployeeComponent,
-    RegisterNewEmployeeComponent
+    RegisterNewEmployeeComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
