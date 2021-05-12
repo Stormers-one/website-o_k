@@ -16,15 +16,15 @@ export class EmployeeService {
   }
 
   getEmployees() {
-    return this.document;
+    return this.document.snapshotChanges();
   }
   registerEmployee(employee: Employee) {
     return this.document.doc(employee.email).set({ ...employee });
   }
-  updateEmployee(id: string, employee: Employee): Promise<void> {
-    return this.document.doc(id).update(employee);
+  updateEmployee(employee: Employee): Promise<void> {
+    return this.document.doc(employee.email).update(employee);
   }
-  removeEmployee(id: string): Promise<void> {
-    return this.document.doc(id).delete();
+  removeEmployee(employee: Employee): Promise<void> {
+    return this.document.doc(employee.email).delete();
   }
 }
