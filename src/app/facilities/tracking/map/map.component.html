@@ -10,9 +10,15 @@
 
     <!-- Develop this div appropriately -->
     <div class="container">
+        <agm-map [latitude]='lat' [longitude]='long' >
+            <agm-marker 
+                [latitude]="lat" 
+                [longitude]="long">    
+            </agm-marker>
+        </agm-map>
         <div class="Bustracking-banner">
-            <agm-map [latitude]='lat' [longitude]='long' [mapTypeId]='googleMapType'>
-            </agm-map>
+            
+            <p> aish</p>
         </div>
     </div>
         

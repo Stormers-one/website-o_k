@@ -22,7 +22,7 @@ export class MapComponent implements OnInit {
 
   lat = 28.704060;
   long = 77.102493;
-  googleMapType = 'SATELLITE';
+  
 
 
 }

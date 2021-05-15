@@ -49,7 +49,8 @@ import { AgmCoreModule } from '@agm/core';
     FormsModule,
     AngularFireStorageModule ,
     AgmCoreModule.forRoot({
-      apiKey: PrivateConfig.google_maps.apiKey
+      apiKey: PrivateConfig.google_maps.apiKey,
+      libraries: ['places']
     }),
   ],
   providers: [],
