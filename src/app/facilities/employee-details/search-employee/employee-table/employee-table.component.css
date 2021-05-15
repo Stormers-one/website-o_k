@@ -1,0 +1,42 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+
+}
+
+
+table {
+  background-color: white;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  border-radius: 8px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: auto;
+  align-content: center;
+  width: 90%;
+  border: 1px solid #ddd;
+}
+
+table>tbody{
+    padding: 5 5 5 5;
+}
+table>thead>th {
+  font-size: 20px;
+}
+
+table>tbody>tr>td {
+  text-align: start;
+}
+
+table>tbody {
+  overflow-x: auto;
+
+}
