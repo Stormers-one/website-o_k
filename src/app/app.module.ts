@@ -22,6 +22,9 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MapComponent } from './facilities/tracking/map/map.component';
+import {PrivateConfig } from '../private_config';
+import { AgmCoreModule } from '@agm/core';
+
 
 @NgModule({
   declarations: [
@@ -44,9 +47,13 @@ import { MapComponent } from './facilities/tracking/map/map.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     FormsModule,
-    AngularFireStorageModule 
+    AngularFireStorageModule ,
+    AgmCoreModule.forRoot({
+      apiKey: PrivateConfig.google_maps.apiKey
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
