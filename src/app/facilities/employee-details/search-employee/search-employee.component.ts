@@ -18,9 +18,11 @@ export class SearchEmployeeComponent implements OnInit {
   goBackOnce() {
     this._location.back();
   }
-  employee: Employee[] = [];
+  employee: Employee[];
   id = '';
-  constructor(private router: Router, private _location: Location, private employeeService: EmployeeService) { }
+  constructor(private router: Router, private _location: Location, private employeeService: EmployeeService) {
+    this.employee = [];
+   }
 
   ngOnInit(): void {
     this.employeeService.getEmployees().snapshotChanges().subscribe(data => {

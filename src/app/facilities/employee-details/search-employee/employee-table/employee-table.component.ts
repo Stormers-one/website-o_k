@@ -10,10 +10,9 @@ import { Router } from '@angular/router';
 })
 export class EmployeeTableComponent implements OnInit {
 
-  @Input() employee: Employee;
+  @Input() employee: Employee[] = [];
 
   constructor(private router: Router, private _location: Location) { 
-    this.employee = {};
     console.log(this.employee);
     }
 

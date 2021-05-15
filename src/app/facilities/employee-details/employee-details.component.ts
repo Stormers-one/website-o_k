@@ -21,12 +21,12 @@ export class EmployeeDetailsComponent implements OnInit {
       .catch(console.error);
   }
 
-  employee: Employee[] = [];
   id = '';
   constructor(
     private router: Router,
     private employeeService: EmployeeService
-  ) { }
+  ) { 
+  }
 
   ngOnInit(): void {
   }
