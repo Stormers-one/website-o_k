@@ -5,6 +5,10 @@ Bustracking-banner {
       flex-direction: column;
       justify-content: center; */
     align-content: center;
+    
+}
+agm-map {
+  height: 300px;
 }
 
 input{

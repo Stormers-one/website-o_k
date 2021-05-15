@@ -20,8 +20,8 @@ export class MapComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  lat = 28.704060;
-  long = 77.102493;
+  lat = 10.001959509869325;
+  long = 76.32159091824248;
   
 
 
