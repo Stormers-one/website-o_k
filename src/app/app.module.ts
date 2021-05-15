@@ -24,6 +24,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MapComponent } from './facilities/tracking/map/map.component';
 import {PrivateConfig } from '../private_config';
 import { AgmCoreModule } from '@agm/core';
+import { EmployeeTableComponent } from './facilities/employee-details/search-employee/employee-table/employee-table.component';
+
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -38,7 +41,8 @@ import { AgmCoreModule } from '@agm/core';
     MainBannerComponent,
     SearchEmployeeComponent,
     RegisterNewEmployeeComponent,
-    MapComponent
+    MapComponent,
+    EmployeeTableComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,7 @@ import { AgmCoreModule } from '@agm/core';
       apiKey: PrivateConfig.google_maps.apiKey,
       libraries: ['places']
     }),
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,11 +12,11 @@ export class EmployeeService {
   document: AngularFirestoreCollection<Employee>;
 
   constructor(private db: AngularFirestore) {
-    this.document = db.collection('Employee Details');
+    this.document = db.collection('/Employee Details');
   }
 
   getEmployees() {
-    return this.document.snapshotChanges();
+    return this.document;
   }
   registerEmployee(employee: Employee) {
     return this.document.doc(employee.email).set({ ...employee });

@@ -29,16 +29,8 @@ export class EmployeeDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.employeeService.getEmployees().subscribe(data => {
-      this.employee = data.map(e => {
-        return {
-          id: e.payload.doc.id,
-          ...e.payload.doc.data()
-        } as Employee;
-      })
-    });
   }
-  
+
   create(employee: Employee) {
     this.employeeService.registerEmployee(employee);
   }
