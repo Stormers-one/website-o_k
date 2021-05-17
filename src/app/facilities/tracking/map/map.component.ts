@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; 
 import { Location } from '@angular/common';
+import Busdata from 'src/app/shared/models/busdata';
+import { MapService } from 'src/app/shared/services/map.service';
 
 @Component({
   selector: 'app-map',
@@ -15,9 +17,23 @@ export class MapComponent implements OnInit {
   goBackOnce() {
     this._location.back();
   }
-  constructor(private router: Router,private _location: Location) {}
+  
 
+  Busdata : Busdata[] =[];
+  id = '';
+  constructor(private router: Router,private _location: Location,private MapService: MapService) {
+    this.Busdata =[];
+  }
+  
   ngOnInit(): void {
+    this.MapService.getBusdata().snapshotChanges().subscribe(data => {
+      this.Busdata = data.map((a) => {
+        const data = a.payload.doc.data();
+        const id = a.payload.doc.id;
+        // console.log(data.name);
+        return { id, ...data };
+      });
+    });
   }
 
   lat = 10.001959509869325;

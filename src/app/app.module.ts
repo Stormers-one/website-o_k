@@ -27,6 +27,10 @@ import { AgmCoreModule } from '@agm/core';
 import { EmployeeTableComponent } from './facilities/employee-details/search-employee/employee-table/employee-table.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+
+import { MapService } from './shared/services/map.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -42,7 +46,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SearchEmployeeComponent,
     RegisterNewEmployeeComponent,
     MapComponent,
-    EmployeeTableComponent
+    EmployeeTableComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -51,15 +56,17 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AngularFirestoreModule,
     AngularFireAuthModule,
     FormsModule,
+    HttpClientModule,
     AngularFireStorageModule ,
-    AgmCoreModule.forRoot({
-      apiKey: PrivateConfig.google_maps.apiKey,
-      libraries: ['places']
+    AgmCoreModule.forRoot({apiKey: PrivateConfig.google_maps.apiKey,
+    libraries: ['places']
     }),
-    NgxPaginationModule,
+    NgxPageScrollCoreModule.forRoot({ duration: 1600 }),
+    NgxPaginationModule
   ],
-  providers: [],
+  providers: [MapService],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
 

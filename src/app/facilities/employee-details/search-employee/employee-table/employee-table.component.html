@@ -1,6 +1,7 @@
 <!-- Develop this div appropriately -->
 <div class="container">
     <table>
+        
         <thead>
             <tr>
                 <th>Email</th>
@@ -9,7 +10,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let employee of employee | paginate: { itemsPerPage: 7, currentPage: 1 }; let i = index;">
+           
+            
+        </tbody>
+        
+             <tr *ngFor="let employee of employee | paginate: { itemsPerPage: 10, currentPage: 1 }; let i = index;">
                 <td>{{employee.email}}</td>
                 <td>{{employee.name}}</td>
                 <td>{{employee.phone_no}}</td>
@@ -17,7 +22,7 @@
                     <button>Delete</button>
                 </td>
             </tr>
-        </tbody>
+        
 
     </table>
 
