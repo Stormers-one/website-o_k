@@ -12,7 +12,7 @@ import { EmployeeDetailsComponent } from './facilities/employee-details/employee
 import { MainBannerComponent } from './main-banner/main-banner.component';
 import { SearchEmployeeComponent } from './facilities/employee-details/search-employee/search-employee.component';
 import { RegisterNewEmployeeComponent } from './facilities/employee-details/register-new-employee/register-new-employee.component';
-import { FormsModule } from '@angular/forms';
+
 
 // Firebase integration
 import { AngularFireModule } from '@angular/fire';
@@ -31,6 +31,8 @@ import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 import { MapService } from './shared/services/map.service';
 import { HttpClientModule } from '@angular/common/http';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -56,6 +58,7 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFirestoreModule,
     AngularFireAuthModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AngularFireStorageModule ,
     AgmCoreModule.forRoot({apiKey: PrivateConfig.google_maps.apiKey,

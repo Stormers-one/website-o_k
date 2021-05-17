@@ -17,14 +17,18 @@
                 </a>
             </figure>
         </div>
-        <form  action="/action_page.php">
-            <label for="Bnum"><b>Enter Bus Number</b> </label><br>
-            <input type="text" id="Bnum" name="Bnum" required><br><br>
-            <label for="from"><b>Enter Starting Point  </b></label><br>
-            <input type="text" id="from" name="from" required><br><br>
-            <label for="to"><b>Enter Destination Point </b> </label><br>
-            <input type="text" id="to" name="to" required><br><br><br>
-            <input type="submit" value="Submit"routerLink="/facilities/tracking/map" routerLinkActive="active" (click)="goToPage('map')" >
-        </form>   
+        <form >
+            <!-- <form [formGroup]="form" (ngSubmit)="submit()">   -->
+            <div>
+                <label for="website">Website:</label>
+                <select formControlName="Select Bus_id" >
+                    <option>Select Website</option>
+                    
+                    <option *ngFor="let Bus of Busdata">{{Bus.Bus_id}}</option>
+                </select>
+                
+            </div>           
+            <button type="submit">Submit</button>
+        </form> 
     </div>
 </div>

@@ -3,5 +3,7 @@ export default class Busdata {
     Direction?:string 
     Bus_id?:string;
     Location?:any;
+    Longitude?:string;
+    Latitude?:string;
     
 }
