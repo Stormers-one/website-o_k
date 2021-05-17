@@ -23,8 +23,14 @@ export class MapComponent implements OnInit {
       console.log(this.Busdata);
       }
   
-  ngOnInit(): void {
-     }
+      ngOnInit() {
+        this.Busdata = this.router.routerState.snapshot.root.data["Bustype"];
+          
+      }
+    
+      ngOnDestroy() {
+        this.Busdata; 
+      }
 
   lat = 10.001959509869325;
   long = 76.32159091824248;
