@@ -17,7 +17,7 @@ import { MapComponent } from './facilities/tracking/map/map.component';
 const routes: Routes = [
   { path: '', component: FacilitiesComponent },
   { path: 'facilities/tracking', component: TrackingComponent },
-  { path: 'facilities/tracking/map', component: MapComponent },
+  { path: 'facilities/tracking/map', component: MapComponent, data:{...} },
   { path: 'facilities/schedule', component: ScheduleComponent },
   { path: 'facilities/schedule/display-schedule', component: DisplayScheduleComponent },
   { path: 'facilities/schedule/generate-schedule', component: GenerateNewScheduleComponent },
