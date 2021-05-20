@@ -20,8 +20,8 @@ export class TrackingComponent implements OnInit {
   goToPage(link: string) {
     console.log(this.dropDownForm.value['busInfo']);
     let res = this.filterData(this.dropDownForm.value['busInfo']);
-    console.log(res);
-    this.router.navigate(['/facilities/tracking/' + link]).then(success => console.log('navigation success?', success))
+    // console.log(res);
+    this.router.navigateByUrl('/facilities/tracking/' + link, {state: res}).then(success => console.log('navigation success?', success))
       .catch(console.error);
   }
   result:any = Busdata;
