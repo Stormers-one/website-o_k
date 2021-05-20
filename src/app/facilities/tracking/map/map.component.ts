@@ -4,7 +4,6 @@ import { Location } from '@angular/common';
 import Busdata from 'src/app/shared/models/busdata';
 import { MapService } from 'src/app/shared/services/map.service';
 
-
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -18,11 +17,10 @@ export class MapComponent implements OnInit {
   goBackOnce() {
     this._location.back();
   }
-  @Input() Busdata: Busdata[] = [];
+  @Input() Busdata: any;
 
 
   constructor(private router: Router, private _location: Location) {
-    console.log(this.Busdata);
   }
 
   ngOnInit() {

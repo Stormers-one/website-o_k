@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router } from '@angular/router';  
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import Busdata from 'src/app/shared/models/busdata';
 import { MapService } from 'src/app/shared/services/map.service';
-//import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators} from '@angular/forms';
 //import { type } from 'os';
 
 
@@ -13,34 +13,54 @@ import { MapService } from 'src/app/shared/services/map.service';
   styleUrls: ['./tracking.component.css']
 })
 export class TrackingComponent implements OnInit {
-  goBack(){
-    this.router.navigate(['/']).then(success => console.log('navigation success?' , success))
-    .catch(console.error);   
+  goBack() {
+    this.router.navigate(['/']).then(success => console.log('navigation success?', success))
+      .catch(console.error);
   }
-  goToPage(link:string){
-    this.router.navigate(['/facilities/tracking/'+link]).then(success => console.log('navigation success?' , success))
-    .catch(console.error);   
+  goToPage(link: string) {
+    console.log(this.dropDownForm.value['busInfo']);
+    let res = this.filterData(this.dropDownForm.value['busInfo']);
+    console.log(res);
+    this.router.navigate(['/facilities/tracking/' + link]).then(success => console.log('navigation success?', success))
+      .catch(console.error);
   }
-  Busdata : Busdata[] =[];
+  result:any = Busdata;
+
+  //////////////////////////////////////
+  ///////// Filtering bus data /////////
+  filterData(opt:any):Busdata{
+    this.result = this.Busdata.filter(function(buses) {
+      return buses.Bus_id == opt;
+    });
+
+    return this.result;
+  }
+
+  //////////////////////////////////////
+  ///////// Drop down form code ////////
+
+  dropDownForm = new FormGroup({
+    busInfo: new FormControl('', Validators.required)
+  });
+
+  get validateFunction(){
+    return this.dropDownForm.controls;
+  }
+
+  //////////////////////////////////////
+
+  Busdata: Busdata[] = [];
   id = '';
-  constructor(private router: Router,private _location: Location,private MapService: MapService) {
-    this.Busdata =[];
+  constructor(private router: Router, private _location: Location, private MapService: MapService) {
+    this.Busdata = [];
 
-    }
+  }
 
-  // form = new FormGroup({
-  //   website: new FormControl('', Validators.required)
-  // });
-  
-  // get f(){
-  //   return this.form.controls;
-  // }
-  
-  // submit(){
-  //   console.log(this.form.value);
-  // }
+  Bus_id: String = "";
+  setBusID(id: String): void {
+    this.Bus_id = id;
+  }
 
- Bus_id :string[]=[]
   ngOnInit(): void {
     this.MapService.getBusdata().snapshotChanges().subscribe(data => {
       this.Busdata = data.map((a) => {
