@@ -20,6 +20,13 @@ export class EmployeeTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  delete(){
+    console.log("delete button pressed");
+  }
+  buttonPressed(){
+    console.log("Button pressed");
+  }
+
   goBack() {
     this.router.navigate(['/']).then(success => console.log('navigation success?', success))
       .catch(console.error);
@@ -28,7 +35,7 @@ export class EmployeeTableComponent implements OnInit {
     this._location.back();
   }
 
-  delete(employee: Employee) {
-    this.employeeService.removeEmployee(employee);
-  }
+  // delete(employee: Employee) {
+  //   this.employeeService.removeEmployee(employee);
+  // }
 }

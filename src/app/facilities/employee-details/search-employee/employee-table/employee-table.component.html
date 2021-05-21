@@ -1,7 +1,6 @@
 <!-- Develop this div appropriately -->
 <div class="container">
 
-
     <div class="table">
         <div class="table-header">
             <div class="td-head">
@@ -9,63 +8,26 @@
 
             </div>
             <div class="td-head">
-                <span>Name</span>
+                <span>Active</span>
             </div>
             <div class="td-head">
-                <span>Phone no</span>
+                <span>Designation</span>
             </div>
             <div class="td-head">
-                <span></span>
             </div>
         </div>
 
-        <div *ngFor="let employee of employee | paginate: { itemsPerPage: 10, currentPage: 1 }; let i = index;"
-            class="table-body">
-            <a>
-                <div class="td-body">
-                    <span>{{employee.email}}</span>
-                </div>
-                <div class="td-body">
-                    <span>{{employee.name}}</span>
-                </div>
-                <div class="td-body">
-                    <span>{{employee.phone_no}}</span>
-                </div>
-                <div class="td-body">
-                    <button>Delete</button>
-                </div>
-            </a>
-            <div class="line-break">
-
+        <button *ngFor="let employee of employee | paginate: { itemsPerPage: 10, currentPage: 1 }; let i = index;"
+            class="table-body" (click) = "buttonPressed()">
+            <div class="td-body">
+                <span>{{employee.email}}</span>
             </div>
-        </div>
+            <div class="td-body">
+                <span>{{employee.name}}</span>
+            </div>
+            <div class="td-body">
+                <span>{{employee.phone_no}}</span>
+            </div>
+        </button>
     </div>
-
-
-    <table>
-
-        <thead>
-            <tr>
-                <th>Email</th>
-                <th>Name</th>
-                <th>Phone No</th>
-            </tr>
-        </thead>
-        <tbody>
-
-
-        </tbody>
-
-        <tr *ngFor="let employee of employee | paginate: { itemsPerPage: 10, currentPage: 1 }; let i = index;">
-            <td>{{employee.email}}</td>
-            <td>{{employee.name}}</td>
-            <td>{{employee.phone_no}}</td>
-            <td>
-                <button>Delete</button>
-            </td>
-        </tr>
-
-
-    </table>
-
 </div>
