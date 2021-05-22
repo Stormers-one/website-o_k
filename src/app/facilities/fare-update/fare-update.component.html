@@ -18,11 +18,19 @@
             </figure>
         </div>
     </div>
-    <form  action="/action_page.php">
-        <label for="minprice"><br><b>Revised minimum price</b> (in Rupees)</label><br>
-        <input type="number" step="any" onfocus="this.value=''" id="Bnum" name="Bnum" required><br><br>
-        <label for="price/km"><b>Price/KM </b>(in Rupees)</label><br>
-        <input type="number" step="any" onfocus="this.value=''" id="from" name="from" required><br><br><br>
-        <input type="submit"  value="Update">
-    </form>
+    <div *ngIf="!submitted">
+        <form  action="/action_page.php">
+            <label for="bus_type"><br><b>Enter Bus Type</b> </label><br>
+            <input type="text" id="new_name" name="new_name" required [(ngModel)]="document.bus_type"><br><br>
+           <label for="minprice"><br><b>Revised minimum price</b> (in Rupees)</label><br>
+           <input type="number"  id="Bnum" name="Bnum" required [(ngModel)]="document.min_price"><br><br>
+           <label for="price/km"><b>Price/KM </b>(in Rupees)</label><br>
+           <input type="number"  id="from" name="from" required [(ngModel)]="document.per_km"><br><br><br>
+           <input type="submit"  value="Update" (click)="saveFare()">
+        </form>
+    </div>
+    <div *ngIf="submitted">
+        <h4>You updated fare successfully!</h4>
+        <button (click)="newFare()">Add</button>
+    </div>
 </div>
