@@ -20,16 +20,19 @@
 }
 .td-mail{
   width: 200px;
+  padding: 2px auto;
   align-content: flex-start;
   text-align: start;
 }
 .td-active{
   width: 100px;
+  padding: 2px auto;
   text-align: start;
   align-content: flex-start;
 }
 .td-desig{
   width: 100px;
+  padding: 2px auto;
   text-align: start;
   align-content: flex-start;
 }
@@ -40,7 +43,7 @@
   align-content: center;
   flex-direction: row;
   padding-bottom: 5px;
-  height: 35px;
+  height: 37px;
   font-weight: 400;
   font-size: medium;
   width: 100%;
