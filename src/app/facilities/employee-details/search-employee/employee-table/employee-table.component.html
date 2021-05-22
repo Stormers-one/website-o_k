@@ -1,32 +1,30 @@
 <!-- Develop this div appropriately -->
 <div class="container">
-
     <div class="table">
         <div class="table-header">
-            <div class="td-head">
+            <div class="td-mail">
                 <span>Email</span>
-
             </div>
-            <div class="td-head">
+            <div class="td-active">
                 <span>Active</span>
             </div>
-            <div class="td-head">
+            <div class="td-desig">
                 <span>Designation</span>
-            </div>
-            <div class="td-head">
             </div>
         </div>
 
         <button *ngFor="let employee of employee | paginate: { itemsPerPage: 10, currentPage: 1 }; let i = index;"
-            class="table-body" (click) = "buttonPressed()">
-            <div class="td-body">
+            class="table-body" (click)="buttonPressed()">
+            <div class="td-mail">
                 <span>{{employee.email}}</span>
             </div>
-            <div class="td-body">
-                <span>{{employee.name}}</span>
+            <div class="td-active">
+                <!-- <span>{{employee.name}}</span> -->
+                <span>active</span>
             </div>
-            <div class="td-body">
-                <span>{{employee.phone_no}}</span>
+            <div class="td-desig">
+                <!-- <span>{{employee.phone_no}}</span> -->
+                <span>Conductor</span>
             </div>
         </button>
     </div>
