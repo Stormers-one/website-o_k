@@ -15,20 +15,22 @@
         <div class="spacer-height">
 
         </div>
+        <div class="table-container">
+            <button *ngFor="let employee of employee | paginate: { itemsPerPage: 10, currentPage: 1 }; let i = index;"
+                class="table-body" (click)="buttonPressed()">
+                <div class="td-mail">
+                    <span>{{employee.email}}</span>
+                </div>
+                <div class="td-active">
+                    <!-- <span>{{employee.name}}</span> -->
+                    <span>active</span>
+                </div>
+                <div class="td-desig">
+                    <!-- <span>{{employee.phone_no}}</span> -->
+                    <span>Conductor</span>
+                </div>
+            </button>
+        </div>
 
-        <button *ngFor="let employee of employee | paginate: { itemsPerPage: 10, currentPage: 1 }; let i = index;"
-            class="table-body" (click)="buttonPressed()">
-            <div class="td-mail">
-                <span>{{employee.email}}</span>
-            </div>
-            <div class="td-active">
-                <!-- <span>{{employee.name}}</span> -->
-                <span>active</span>
-            </div>
-            <div class="td-desig">
-                <!-- <span>{{employee.phone_no}}</span> -->
-                <span>Conductor</span>
-            </div>
-        </button>
     </div>
 </div>

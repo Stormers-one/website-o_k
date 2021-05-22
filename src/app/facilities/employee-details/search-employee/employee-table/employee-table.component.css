@@ -46,11 +46,20 @@
   width: 100%;
   flex: 1 1 auto;
   border-radius: 8px;
-  border-width: 1px;
+  border-width: 0px;
+  background-color: transparent;
 }
 .table-body:hover{
   background-color: rgb(146, 233, 129);
+  color: grey;
 }
 .spacer-height{
   height: 0.8em;
+}
+
+.table-container{
+  background-color: white;
+  border-radius: 8px;
+  border-style: solid;
+  border-color: rgba(13, 179, 13, 0.63);
 }
