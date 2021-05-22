@@ -12,6 +12,9 @@
                 <span>Designation</span>
             </div>
         </div>
+        <div class="spacer-height">
+
+        </div>
 
         <button *ngFor="let employee of employee | paginate: { itemsPerPage: 10, currentPage: 1 }; let i = index;"
             class="table-body" (click)="buttonPressed()">

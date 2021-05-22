@@ -1,7 +1,7 @@
 .container {
-  /* height: 100%;
-  width: 100%; */
-  margin: 10 10 10 10;
+  height: 100%;
+  width: 90%;
+  margin: 10px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,29 +20,26 @@
 }
 .td-mail{
   width: 200px;
-  /* background-color: aquamarine; */
   align-content: flex-start;
   text-align: start;
 }
 .td-active{
   width: 100px;
-  /* background-color: antiquewhite; */
   text-align: start;
   align-content: flex-start;
 }
 .td-desig{
   width: 100px;
-  /* background-color: burlywood; */
   text-align: start;
   align-content: flex-start;
 }
-
 .table-body{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-content: center;
   flex-direction: row;
+  padding-bottom: 5px;
   height: 35px;
   font-weight: 400;
   font-size: medium;
@@ -50,9 +47,10 @@
   flex: 1 1 auto;
   border-radius: 8px;
   border-width: 1px;
-  padding-bottom: 0.2em;
 }
-
 .table-body:hover{
   background-color: rgb(146, 233, 129);
+}
+.spacer-height{
+  height: 0.8em;
 }
