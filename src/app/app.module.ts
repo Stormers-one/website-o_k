@@ -13,6 +13,28 @@ import { MainBannerComponent } from './main-banner/main-banner.component';
 import { SearchEmployeeComponent } from './facilities/employee-details/search-employee/search-employee.component';
 import { RegisterNewEmployeeComponent } from './facilities/employee-details/register-new-employee/register-new-employee.component';
 
+
+// Firebase integration
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { MapComponent } from './facilities/tracking/map/map.component';
+import {PrivateConfig } from '../private_config';
+import { AgmCoreModule } from '@agm/core';
+import { EmployeeTableComponent } from './facilities/employee-details/search-employee/employee-table/employee-table.component';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+
+import { MapService } from './shared/services/map.service';
+import { HttpClientModule } from '@angular/common/http';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,13 +46,30 @@ import { RegisterNewEmployeeComponent } from './facilities/employee-details/regi
     EmployeeDetailsComponent,
     MainBannerComponent,
     SearchEmployeeComponent,
-    RegisterNewEmployeeComponent
+    RegisterNewEmployeeComponent,
+    MapComponent,
+    EmployeeTableComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase, 'website-o_k'),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AngularFireStorageModule ,
+    AgmCoreModule.forRoot({apiKey: PrivateConfig.google_maps.apiKey,
+    libraries: ['places']
+    }),
+    NgxPageScrollCoreModule.forRoot({ duration: 1600 }),
+    NgxPaginationModule
   ],
-  providers: [],
+  providers: [MapService],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
+

@@ -12,19 +12,27 @@
     <div class="container">
         <div class="tracking-banner">
             <figure>
-                <a href="https://www.newgenapps.com/wp-content/uploads/2020/04/Navigator-Navigation-Google-Maps-Map-Location-Gps-2049643.jpg" target="_blank">
+                <a href="https://www.newgenapps.com/wp-content/uploads/2020/04/Navigator-Navigation-Google-Maps-Map-Location-Gps-2049643.jpg"
+                    target="_blank">
                     <img id="t-img" alt="Tracking" src="assets/images/Navigator.jpg" width="304" height="328">
                 </a>
             </figure>
         </div>
-        <form  action="/action_page.php">
-            <label for="Bnum"><b>Bus Number</b> (Required)</label><br>
-            <input type="text" id="Bnum" name="Bnum"><br><br>
-            <label for="from"><b>From </b>(Required)</label><br>
-            <input type="text" id="from" name="from"><br><br>
-            <label for="to"><b>To</b> (Required)</label><br>
-            <input type="text" id="to" name="to"><br><br><br>
-            <input type="submit" value="Submit" routerLink="/" routerLinkActive="active" (click)="goBack()">
-        </form>   
+        <!-- <form > -->
+        <form [formGroup]="dropDownForm" (ngSubmit)="goToPage('map')">
+            <div>
+                <label for="busInfo">Website:</label>
+                <select formControlName="busInfo" class="form-control">
+                    <option disabled>Select Bus</option>
+                    <option *ngFor="let Bus of Busdata">{{Bus.Bus_id}}</option>
+                </select>
+                <!-- 
+                <div *ngIf="validateFunction.busInfo.touched && validateFunction.busInfo.invalid">
+                    <div *ngIf="validateFunction.busInfo.errors.required">Name is required.</div>
+                </div> -->
+
+            </div>
+            <button type="submit" [disabled]="!dropDownForm.valid">Submit</button>
+        </form>
     </div>
 </div>
