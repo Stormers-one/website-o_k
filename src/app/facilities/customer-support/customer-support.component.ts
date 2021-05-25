@@ -25,14 +25,15 @@ export class CustomerSupportComponent implements OnInit {
     console.log(this.complainantdropDownForm.value['Route']);
     // let res = this.filterData(this.complainantdropDownForm.value['busInfo']);
     // console.log(res);
-    this.getFeedbacks( this.complainantdropDownForm.value['Complainant'],this.complainantdropDownForm.value['Route']);
-    this.router.navigateByUrl('/facilities/customercare/' + link, {state: this.customercare}).then(success => console.log('navigation success?', success))
+     this.getFeedbacks( this.complainantdropDownForm.value['Complainant'],this.complainantdropDownForm.value['Route']);
+    this.router.navigateByUrl('/facilities/customerSupport/' + link, {state: this.customercare}).then(success => console.log('navigation success?', success))
       .catch(console.error);
   }
-  complainantdropDownForm = new FormGroup({
-    busInfo: new FormControl('', Validators.required)
-  });
   
+  complainantdropDownForm = new FormGroup({
+    Complainant: new FormControl('', Validators.required),
+    Route: new FormControl('', Validators.required)
+  });
   get validateFunction(){
     return this.complainantdropDownForm.controls;
   }
@@ -42,11 +43,11 @@ export class CustomerSupportComponent implements OnInit {
     this.customercare = [];
   }
 
-  getFeedbacks(option: number, route: string) {
-    if (option == 1) {
+  getFeedbacks(option: string, route: string) {
+    if (option == "Passenger") {
       this.getPassengerFeedbacks(route);
     }
-    else if (option == 2) {
+    else if (option == "Driver-Conductor") {
       this.getDriverConductorFeedbacks(route);
     }
   }
