@@ -20,13 +20,13 @@
         <form [formGroup]="complainantdropDownForm" (ngSubmit)="goToPage('complain-list')">
             <div>
                 <label for="Complainant">Type of Complainant:  </label>
-                <select formControlName="Complainant" class="form-control">
-                    <option disabled>Select Complainant </option>
+                <select formControlName="Complainant">
+                    <option [ngValue]="null">Select Complainant </option>
                     <option *ngFor="let i of Complainant">{{i}}</option>
                 </select><br><br>
                 <label for="Complainant">Route :  </label>
-                <select formControlName="Route" class="form-control">
-                    <option disabled>Select Route </option>
+                <select formControlName="Route">
+                    <option [ngValue]="null">Select Route </option>
                     <option *ngFor="let i of Route">{{i}}</option>
                 </select><br><br>
                 <!-- 

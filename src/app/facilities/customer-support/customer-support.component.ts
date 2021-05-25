@@ -25,14 +25,15 @@ export class CustomerSupportComponent implements OnInit {
     console.log(this.complainantdropDownForm.value['Route']);
     // let res = this.filterData(this.complainantdropDownForm.value['busInfo']);
     // console.log(res);
-     this.getFeedbacks( this.complainantdropDownForm.value['Complainant'],this.complainantdropDownForm.value['Route']);
+    let res:any;
+    res = this.getFeedbacks(this.complainantdropDownForm.value['Complainant'],this.complainantdropDownForm.value['Route']);
     this.router.navigateByUrl('/facilities/customerSupport/' + link, {state: this.customercare}).then(success => console.log('navigation success?', success))
       .catch(console.error);
   }
   
   complainantdropDownForm = new FormGroup({
-    Complainant: new FormControl('', Validators.required),
-    Route: new FormControl('', Validators.required)
+    Complainant: new FormControl('null', Validators.required),
+    Route: new FormControl('null', Validators.required)
   });
   get validateFunction(){
     return this.complainantdropDownForm.controls;
@@ -54,7 +55,7 @@ export class CustomerSupportComponent implements OnInit {
 
   getDriverConductorFeedbacks(route: string) {
     this.CustomercareService.getFeedbackPassenger(route).snapshotChanges().subscribe((data) => {
-      this.customercare = data.map((a) => {
+      return data.map((a) => {
         const id = a.payload.doc.id;
         const data = a.payload.doc.data();
         return { ...data };
@@ -63,7 +64,7 @@ export class CustomerSupportComponent implements OnInit {
   }
   getPassengerFeedbacks(route: string) {
     this.CustomercareService.getFeedbackPassenger(route).snapshotChanges().subscribe((data) => {
-      this.customercare = data.map((a) => {
+      return data.map((a) => {
         const id = a.payload.doc.id;
         const data = a.payload.doc.data();
         return { ...data };
@@ -78,6 +79,7 @@ export class CustomerSupportComponent implements OnInit {
         return id;
       })
     })
+    console.log(this.getDriverConductorFeedbacks("101"));
   }
 
 }
