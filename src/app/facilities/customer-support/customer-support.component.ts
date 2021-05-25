@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-
+import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { CustomercareService } from 'src/app/shared/services/customercare.service';
 import Customercare from 'src/app/shared/models/customercare';
 
@@ -15,8 +15,24 @@ export class CustomerSupportComponent implements OnInit {
     this.router.navigate(['/']).then(success => console.log('navigation success?', success))
       .catch(console.error);
   }
+  Complainant: any[] = ["Passenger","Driver-Conductor"];
+  Route: any[]=[];
   goBackOnce() {
     this._location.back();
+  }
+  goToPage(link: string) {
+    console.log(this.complainantdropDownForm.value['busInfo']);
+    // let res = this.filterData(this.complainantdropDownForm.value['busInfo']);
+    // console.log(res);
+    this.router.navigateByUrl('/facilities/customercare/' + link, {state: this.customercare}).then(success => console.log('navigation success?', success))
+      .catch(console.error);
+  }
+  complainantdropDownForm = new FormGroup({
+    busInfo: new FormControl('', Validators.required)
+  });
+  
+  get validateFunction(){
+    return this.complainantdropDownForm.controls;
   }
   customercare: Customercare[];
   id = '';
@@ -53,6 +69,7 @@ export class CustomerSupportComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.CustomercareService.getRoutes());
   }
 
 }

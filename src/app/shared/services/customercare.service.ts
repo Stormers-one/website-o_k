@@ -14,7 +14,9 @@ export class CustomercareService {
   constructor(private db: AngularFirestore) {
     this.document = db.collection('/Route Feedback');
   }
-
+  getRoutes() {
+    return this.document.snapshotChanges().forEach((a) => { a.map(data => { const dat=data.payload.doc.id; return{ dat }}) });
+  }
   getFeedbackPassenger(route: string) {
     return this.document.doc(route).collection("/Passenger Complaints");
   }

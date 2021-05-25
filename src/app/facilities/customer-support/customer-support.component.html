@@ -1,8 +1,7 @@
 <div class="container">
     <div class="container-row">
         <div class="back-button-container">
-            <button routerLink="/facilities/Customer-Support" routerLinkActive="active"
-                (click)="goBackOnce()">back</button>
+            <button routerLink="/facilities/Customer-Support" routerLinkActive="active" (click)="goBackOnce()">back</button>
         </div>
         <div class="container">
             <h1>Customer Support</h1>
@@ -13,17 +12,30 @@
     <div class="container">
         <div class="tracking-banner">
             <figure>
-                <a href="https://www.newgenapps.com/wp-content/uploads/2020/04/Navigator-Navigation-Google-Maps-Map-Location-Gps-2049643.jpg"
-                    target="_blank">
-                    <img id="t-img" alt="Customer-Support" src="assets/images/customer-service (1).png" width="304"
-                        height="328">
+                <a href="https://www.newgenapps.com/wp-content/uploads/2020/04/Navigator-Navigation-Google-Maps-Map-Location-Gps-2049643.jpg" target="_blank">
+                    <img id="t-img" alt="Customer-Support" src="assets/images/customer-service (1).png" width="304" height="328">
                 </a>
             </figure>
         </div>
-        <form>
-            <label for="B"><br><b>Enter Route Name</b> </label><br>
-            <input type="text" id="Bnum" name="Bnum" required><br><br><br>
-            <input type="submit" value="View Customer Review">
+        <form [formGroup]="complainantdropDownForm" (ngSubmit)="goToPage('complain-list')">
+            <div>
+                <label for="Complainant">Type of Complainant:  </label>
+                <select formControlName="Complainant" class="form-control">
+                    <option disabled>Select Complainant </option>
+                    <option *ngFor="let i of Complainant">{{i}}</option>
+                </select><br><br>
+                <label for="Complainant">Route :  </label>
+                <select formControlName="Route" class="form-control">
+                    <option disabled>Select Route </option>
+                    <option *ngFor="let i of Route">{{i}}</option>
+                </select><br><br>
+                <!-- 
+                <div *ngIf="validateFunction.busInfo.touched && validateFunction.busInfo.invalid">
+                    <div *ngIf="validateFunction.busInfo.errors.required">Name is required.</div>
+                </div> -->
+
+            </div>
+            <button type="submit" [disabled]="!complainantdropDownForm.valid">Submit</button>
         </form>
     </div>
 </div>
