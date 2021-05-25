@@ -69,7 +69,12 @@ export class CustomerSupportComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.CustomercareService.getRoutes());
+    this.CustomercareService.getRoutes().snapshotChanges().subscribe((data)=>{
+      this.Route = data.map((a)=>{
+        const id = a.payload.doc.id;
+        return id;
+      })
+    })
   }
 
 }

@@ -15,7 +15,7 @@ export class CustomercareService {
     this.document = db.collection('/Route Feedback');
   }
   getRoutes() {
-    return this.document.snapshotChanges().forEach((a) => { a.map(data => { const dat=data.payload.doc.id; return{ dat }}) });
+    return this.document;
   }
   getFeedbackPassenger(route: string) {
     return this.document.doc(route).collection("/Passenger Complaints");
