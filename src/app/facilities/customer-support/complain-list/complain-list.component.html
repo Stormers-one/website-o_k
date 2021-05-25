@@ -1,0 +1,29 @@
+<!-- Develop this div appropriately -->
+<div class="container">
+    <div class="table">
+        <div class="table-header">
+            <div class="td-user_id">
+                <span>User_Id</span>
+            </div>
+            <div class="td-Comp">
+                <span>Complain</span>
+            </div>
+        </div>
+        <div class="spacer-height">
+
+        </div>
+        <div class="table-container">
+            <button *ngFor="let customercare of customercare | paginate: { itemsPerPage: 10, currentPage: 1 }; let i = index;"
+                class="table-body" (click)="buttonPressed()">
+                <div class="td-user_id">
+                    <span>{{customercare.user_id}}</span>
+                </div>
+                <div class="td-Comp">
+                    <!-- <span>{{employee.phone_no}}</span> -->
+                    <span>Complain</span>
+                </div>
+            </button>
+        </div>
+
+    </div>
+</div>
