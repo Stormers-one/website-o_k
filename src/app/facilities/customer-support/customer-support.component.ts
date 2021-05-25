@@ -21,9 +21,11 @@ export class CustomerSupportComponent implements OnInit {
     this._location.back();
   }
   goToPage(link: string) {
-    console.log(this.complainantdropDownForm.value['busInfo']);
+    console.log(this.complainantdropDownForm.value['Complainant']);
+    console.log(this.complainantdropDownForm.value['Route']);
     // let res = this.filterData(this.complainantdropDownForm.value['busInfo']);
     // console.log(res);
+    this.getFeedbacks( this.complainantdropDownForm.value['Complainant'],this.complainantdropDownForm.value['Route']);
     this.router.navigateByUrl('/facilities/customercare/' + link, {state: this.customercare}).then(success => console.log('navigation success?', success))
       .catch(console.error);
   }

@@ -1,7 +1,7 @@
 import { Component, Input,OnInit } from '@angular/core';
 import Customercare from 'src/app/shared/models/customercare';
 import { Location } from '@angular/common';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomercareService } from 'src/app/shared/services/customercare.service';
 
 @Component({
@@ -11,9 +11,11 @@ import { CustomercareService } from 'src/app/shared/services/customercare.servic
 })
 export class ComplainListComponent implements OnInit {
 
-  @Input() customercare: Customercare[] = [];
-
-  constructor(private router: Router, private _location: Location, private customercareService :CustomercareService) { 
+  //@Input() customercare: Customercare[] = [];
+  customercare: any;
+  constructor(private router: Router, private _location: Location, private customercareService :CustomercareService, private activatedRoute: ActivatedRoute) { 
+    console.log(this.customercare);
+    this.customercare = this.router.getCurrentNavigation()?.extras.state;
     console.log(this.customercare);
     }
 
@@ -26,7 +28,7 @@ export class ComplainListComponent implements OnInit {
   buttonPressed(){
     console.log("Button pressed");
   }
-
+  
   goBack() {
     this.router.navigate(['/']).then(success => console.log('navigation success?', success))
       .catch(console.error);

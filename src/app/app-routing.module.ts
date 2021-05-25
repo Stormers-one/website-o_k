@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'mainBanner', component: MainBannerComponent },
   { path: 'facilities/employeeDetails/searchEmployee', component: SearchEmployeeComponent },
   { path: 'facilities/employeeDetails/registerEmployee', component: RegisterNewEmployeeComponent },
-  { path: 'facilities/customer-support/complain-list/complain-list.component',component: ComplainListComponent}
+  { path: 'facilities/customer-support/complain-list',component: ComplainListComponent}
 
 
 
