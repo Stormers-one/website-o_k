@@ -18,24 +18,24 @@ export class MapComponent implements OnInit {
     this._location.back();
   }
   Busdata: any;
-  constructor(private router: Router, private _location: Location,private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router, private _location: Location, private activatedRoute: ActivatedRoute) {
     this.Busdata = this.router.getCurrentNavigation()?.extras.state;
   }
 
   ngOnInit() {
     // this.Busdata = this.router.routerState.snapshot.root.data;
-    this.Busdata=history.state;
+    this.Busdata = history.state;
     this.lat = Number(this.Busdata[0]["Latitude"]);
     this.long = Number(this.Busdata[0]["Longitude"]);
 
   }
-  
+
   ngOnDestroy() {
     this.Busdata;
   }
-  lat:number = 0.0;
-  long:number = 0.0;
-  zoom:number = 18;
+  lat: number = 0.0;
+  long: number = 0.0;
+  zoom: number = 18;
 
 }
 

@@ -1,5 +1,5 @@
-    export default class Customercare {
-    user_id?:string;
-    complain?:string;
+export default class Customercare {
+    user_id?: string;
+    complain?: string;
 
-   }
+}

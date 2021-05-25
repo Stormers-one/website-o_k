@@ -15,12 +15,16 @@ export class CustomercareService {
     this.document = db.collection('/Route Feedback');
   }
 
-  getCustomercare() {
-    return this.document;
+  getFeedbackPassenger(route: string) {
+    return this.document.doc(route).collection("/Passenger Complaints");
   }
-  registerCustomercare(customercare : Customercare ) {
-    return this.document.doc(customercare.user_id).set({ ...customercare });
+  getFeedbackDriverConductor(route: string) {
+    return this.document.doc(route).collection("/DriverConductor Complaints");
   }
+
+  // registerCustomercare(customercare : Customercare ) {
+  //   return this.document.doc(customercare.user_id).set({ ...customercare });
+  // }
   // updateEmployee(customercare : Customercare): Promise<void> {
   //   return this.document.doc(customercare.complain).update(customercare);
   // }
