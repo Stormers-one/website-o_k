@@ -36,3 +36,8 @@ label{
     text-align: justify;
     font-size: 17px
 }
+
+button[type=submit]:disabled {
+  /*transform: translateY(-0.20rem);*/
+  background-color: #808a80;
+}
