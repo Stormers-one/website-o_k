@@ -18,10 +18,10 @@ export class CustomercareService {
     return this.document;
   }
   getFeedbackPassenger(route: string) {
-    return this.document.doc(route).collection("/Passenger Complaints");
+    return this.document.doc(route).collection("Passenger Complaints");
   }
   getFeedbackDriverConductor(route: string) {
-    return this.document.doc(route).collection("/DriverConductor Complaints");
+    return this.document.doc(route).collection("DriverConductor Complaints");
   }
 
   // registerCustomercare(customercare : Customercare ) {

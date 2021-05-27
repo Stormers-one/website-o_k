@@ -27,7 +27,8 @@ export class CustomerSupportComponent implements OnInit {
     // console.log(res);
     let res:any;
     res = this.getFeedbacks(this.complainantdropDownForm.value['Complainant'],this.complainantdropDownForm.value['Route']);
-    this.router.navigateByUrl('/facilities/customerSupport/' + link, {state: this.customercare}).then(success => console.log('navigation success?', success))
+    console.log(`result of function: ${res}`);
+    this.router.navigateByUrl('/facilities/customerSupport/' + link, {state: res}).then(success => console.log('navigation success?', success))
       .catch(console.error);
   }
   
@@ -44,32 +45,37 @@ export class CustomerSupportComponent implements OnInit {
     this.customercare = [];
   }
 
-  getFeedbacks(option: string, route: string) {
+  getFeedbacks(option: string, route: string):any {
     if (option == "Passenger") {
-      this.getPassengerFeedbacks(route);
+      return this.getPassengerFeedbacks(route);
     }
     else if (option == "Driver-Conductor") {
-      this.getDriverConductorFeedbacks(route);
+      return this.getDriverConductorFeedbacks(route);
     }
   }
 
   getDriverConductorFeedbacks(route: string) {
-    this.CustomercareService.getFeedbackPassenger(route).snapshotChanges().subscribe((data) => {
-      return data.map((a) => {
+    console.log(`Route<${route}>`);
+    let res:any;
+    this.CustomercareService.getFeedbackDriverConductor(route).snapshotChanges().subscribe((data) => {
+       res = data.map((a) => {
         const id = a.payload.doc.id;
         const data = a.payload.doc.data();
         return { ...data };
       });
     });
+    return res;
   }
   getPassengerFeedbacks(route: string) {
+    let res:any;
     this.CustomercareService.getFeedbackPassenger(route).snapshotChanges().subscribe((data) => {
-      return data.map((a) => {
+      res = data.map((a) => {
         const id = a.payload.doc.id;
         const data = a.payload.doc.data();
         return { ...data };
       });
     });
+    return res;
   }
 
   ngOnInit(): void {
@@ -79,7 +85,7 @@ export class CustomerSupportComponent implements OnInit {
         return id;
       })
     })
-    console.log(this.getDriverConductorFeedbacks("101"));
+    console.log(`Test DriverConductor Feedbacks: ${this.getDriverConductorFeedbacks("101")}`);
   }
 
 }

@@ -13,10 +13,19 @@
     <div *ngIf="!submitted">
         <form action="/action_page.php">
             <label for="new_name"><br><b>Enter Name</b> </label><br>
+            <div *ngIf="!this.validators[0]">
+                <span>Enter proper name</span>
+            </div>
             <input type="text" id="new_name" name="new_name" required [(ngModel)]="document.name"><br><br>
             <label for="phone"><b>Enter Phone number </b></label><br>
+            <div *ngIf="!this.validators[1]">
+                <span>Enter proper Phone number</span>
+            </div>
             <input type="text" id="phone" name="phone" required [(ngModel)]="document.phone_no"><br><br>
             <label for="mail"><b>Enter Email </b></label><br>
+            <div *ngIf="!this.validators[2]">
+                <span>Enter proper email</span>
+            </div>
             <input type="email" id="mail" name="mail" required [(ngModel)]="document.email"><br><br>
             <input type="submit" value="Submit" (click)="saveEmployee()">
         </form>
