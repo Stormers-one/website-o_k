@@ -19,10 +19,41 @@ export class SearchEmployeeComponent implements OnInit {
     this._location.back();
   }
   employee: Employee[];
+  employeeFiltered: Employee[];
   id = '';
+  query: string;
+  docLen:number;
+  matchingQuery:boolean[];
   constructor(private router: Router, private _location: Location, private employeeService: EmployeeService) {
     this.employee = [];
-   }
+    this.employeeFiltered = [];
+    this.query = "";
+    this.docLen = 0;
+    this.matchingQuery = [];
+  }
+  filter(){
+    console.log("Button pressed");
+    let i:number;
+    for(i=0;i<this.docLen;i++){
+      if(this.employee[i].email?.match(this.query)!=null){
+        this.matchingQuery[i]=true;
+      }
+      else{
+        this.matchingQuery[i]=false;
+      }
+    }
+    let j:number;
+    let k:number=0;
+    this.employeeFiltered = [];
+    for(j=0;j<this.docLen;j++){
+      if(this.matchingQuery[j]==true){
+        this.employeeFiltered[k] = this.employee[j];
+        k++;
+      }
+    }
+    // console.log(this.matchingQuery)
+  }
+
 
   ngOnInit(): void {
     this.employeeService.getEmployees().snapshotChanges().subscribe(data => {
@@ -32,6 +63,9 @@ export class SearchEmployeeComponent implements OnInit {
         // console.log(data.name);
         return { id, ...data };
       });
+      this.docLen = this.employee.length;
+      this.employeeFiltered= this.employee;
+      
     });
   }
 

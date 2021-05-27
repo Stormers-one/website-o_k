@@ -24,6 +24,11 @@ input[type=submit]:hover {
   /*transform: translateY(-0.20rem);*/
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.3);
 }
+input[type=submit]:disabled {
+  /*transform: translateY(-0.20rem);*/
+  background-color: gray;
+}
+
 
 label {
   text-align: justify;
@@ -49,3 +54,4 @@ label {
 .container-row-input>div>input{
   width: 75%;
 }
+
