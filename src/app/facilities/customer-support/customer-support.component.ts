@@ -23,11 +23,9 @@ export class CustomerSupportComponent implements OnInit {
     let route = this.complainantdropDownForm.value['Route'];
     // let res = this.filterData(this.complainantdropDownForm.value['busInfo']);
     // console.log(res);
-    console.log('1')
     let res;
     res = await this.getFeedbacks(complainant, route);
     let obj = [res,complainant]
-    console.log('5')
     this.router.navigateByUrl('/facilities/customerSupport/' + link, { state: obj }).then(success => console.log('navigation success?', success))
       .catch(console.error);
   }

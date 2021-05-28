@@ -23,7 +23,8 @@
             <div>
                 <label for="busInfo">Bus Id:  </label>
                 <select formControlName="busInfo" class="form-control">
-                    <option disabled>Select Bus</option>
+                    <option disabled>Choose Bus</option>
+                    <option>Select Bus</option>
                     <option *ngFor="let Bus of Busdata">{{Bus.Bus_id}}</option>
                 </select><br><br><br>
                 <!-- 
