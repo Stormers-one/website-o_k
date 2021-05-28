@@ -18,8 +18,14 @@ export class MapComponent implements OnInit {
     this._location.back();
   }
   Busdata: any;
+  data:any;
+ 
   constructor(private router: Router, private _location: Location, private activatedRoute: ActivatedRoute) {
     this.Busdata = this.router.getCurrentNavigation()?.extras.state;
+    if(this.Busdata==null){
+      this.goBackOnce()
+    }
+    
   }
 
   ngOnInit() {
