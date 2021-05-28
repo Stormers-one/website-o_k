@@ -22,10 +22,19 @@
         <form  action="/action_page.php">
             <label for="bus_type"><br><b>Enter Bus Type</b> </label><br>
             <input type="text" id="new_name" name="new_name" required [(ngModel)]="document.bus_type"><br><br>
+            <div *ngIf="!this.validators[0]">
+                <span>Enter Bus type</span>
+            </div>
            <label for="minprice"><br><b>Revised minimum price</b> (in Rupees)</label><br>
            <input type="number"  id="Bnum" name="Bnum" required [(ngModel)]="document.min_price"><br><br>
+           <div *ngIf="!this.validators[1]">
+                <span>Enter minimum price</span>
+            </div>
            <label for="price/km"><b>Price/KM </b>(in Rupees)</label><br>
            <input type="number"  id="from" name="from" required [(ngModel)]="document.per_km"><br><br><br>
+           <div *ngIf="!this.validators[2]">
+                <span>Enter price per km</span>
+            </div>
            <input type="submit"  value="Update" (click)="saveFare()">
         </form>
     </div>

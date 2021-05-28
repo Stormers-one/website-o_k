@@ -17,7 +17,12 @@ export class FareUpdateComponent implements OnInit {
   goBackOnce() {
     this._location.back();
   }
-  constructor(private router: Router, private _location: Location, private fareservice : FareService) { }
+
+  validators: boolean[];
+
+  constructor(private router: Router, private _location: Location, private fareservice : FareService) {
+    this.validators = [true, true, true];
+  }
   document: Fare = new Fare();
   submitted = false;
 
@@ -25,6 +30,28 @@ export class FareUpdateComponent implements OnInit {
   }
 
   saveFare():void{
+    this.validators = [false, false, false];
+    let bus_type: string = this.document.bus_type ?? "";
+    let min_price: number = Number(this.document.min_price ?? "");
+    let per_km: number = Number(this.document.per_km ?? "");
+    if (bus_type.length > 0) {
+      this.validators[0] = true;
+    }
+    if (min_price>0) {
+      this.validators[1] = true;
+    }
+    if (per_km>0) {
+      this.validators[2] = true;
+    }
+    if (this.validators[0] && this.validators[1] && this.validators[2]) {
+      this.fareservice.updateFare(this.document).then(() => {
+        console.log("Successfully updated the fare");
+        this.submitted = true;
+      });
+    } else if (!this.validators[0] && !this.validators[1] && !this.validators[2]) {
+      console.log("Enter all required fields!");
+    }
+
     this.fareservice.updateFare(this.document).then(()=>{
       console.log("New Fare Updated ");
       this.submitted = true;
