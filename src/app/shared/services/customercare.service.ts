@@ -7,17 +7,23 @@ import Customercare from '../models/customercare';
 })
 export class CustomercareService {
 
-  private dbPath = '/Route Feedback';
-
   document: AngularFirestoreCollection<Customercare>;
-
   constructor(private db: AngularFirestore) {
-    this.document = db.collection('/Route Feedback');
+    this.document = db.collection('Route Feedback');
   }
   getRoutes() {
     return this.document;
   }
   getFeedbackPassenger(route: string) {
+    let ref = this.db.collection("Route Feedback").doc("101").collection("Passenger Complaints");
+    let res;
+    ref.snapshotChanges().subscribe(data => {
+      data.map((a) => {
+        res = a.payload.doc.data();
+        return res;
+      });
+    });
+    console.log(`Route ${res}`);
     return this.document.doc(route).collection("Passenger Complaints");
   }
   getFeedbackDriverConductor(route: string) {

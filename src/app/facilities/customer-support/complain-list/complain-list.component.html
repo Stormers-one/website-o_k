@@ -16,11 +16,11 @@
             <button *ngFor="let customercare of customercare | paginate: { itemsPerPage: 10, currentPage: 1 }; let i = index;"
                 class="table-body" (click)="buttonPressed()">
                 <div class="td-user_id">
-                    <span>{{customercare.user_id}}</span>
+                    <span>{{customercare.UID}}</span>
                 </div>
                 <div class="td-Comp">
                     <!-- <span>{{employee.phone_no}}</span> -->
-                    <span>Complain</span>
+                    <span>{{customercare.complaint}}</span>
                 </div>
             </button>
         </div>

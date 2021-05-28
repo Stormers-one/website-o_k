@@ -15,7 +15,8 @@ export class ComplainListComponent implements OnInit {
   customercare: any;
   constructor(private router: Router, private _location: Location, private customercareService :CustomercareService, private activatedRoute: ActivatedRoute) { 
     this.customercare = this.router.getCurrentNavigation()?.extras.state;
-    console.log(`route State: ${this.customercare}`);
+    console.log(`route State:`);
+    console.log(this.customercare);
     }
 
   ngOnInit(): void {
