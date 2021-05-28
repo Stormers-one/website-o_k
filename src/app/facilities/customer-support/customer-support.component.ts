@@ -19,15 +19,16 @@ export class CustomerSupportComponent implements OnInit {
     this._location.back();
   }
   async goToPage(link: string) {
-    console.log(this.complainantdropDownForm.value['Complainant']);
-    console.log(this.complainantdropDownForm.value['Route']);
+    let complainant = this.complainantdropDownForm.value['Complainant'];
+    let route = this.complainantdropDownForm.value['Route'];
     // let res = this.filterData(this.complainantdropDownForm.value['busInfo']);
     // console.log(res);
     console.log('1')
     let res;
-    res = await this.getFeedbacks(this.complainantdropDownForm.value['Complainant'], this.complainantdropDownForm.value['Route']);
+    res = await this.getFeedbacks(complainant, route);
+    let obj = [res,complainant]
     console.log('5')
-    this.router.navigateByUrl('/facilities/customerSupport/' + link, { state: res }).then(success => console.log('navigation success?', success))
+    this.router.navigateByUrl('/facilities/customerSupport/' + link, { state: obj }).then(success => console.log('navigation success?', success))
       .catch(console.error);
   }
 

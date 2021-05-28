@@ -13,8 +13,15 @@ export class ComplainListComponent implements OnInit {
 
   //@Input() customercare: Customercare[] = [];
   customercare: any;
+  data:any;
+  type:string;
   constructor(private router: Router, private _location: Location, private customercareService :CustomercareService, private activatedRoute: ActivatedRoute) { 
-    this.customercare = this.router.getCurrentNavigation()?.extras.state;
+    this.data = this.router.getCurrentNavigation()?.extras.state;
+    if(this.data==null){
+      this.goBackOnce()
+    }
+    this.customercare = this.data[0]
+    this.type = this.data[1]
     console.log(`route State:`);
     console.log(this.customercare);
     }

@@ -19,7 +19,7 @@
     flex: 1 1 auto;
   }
   .td-user_id{
-    width: 200px;
+    width: 100px;
     padding: 2px auto;
     align-content: flex-start;
     text-align: start;
@@ -31,7 +31,7 @@
     align-content: flex-start;
   } */
   .td-comp{
-    width: 100px;
+    width: 200px;
     padding: 2px auto;
     text-align: start;
     align-content: flex-start;
@@ -65,4 +65,8 @@
     border-radius: 8px;
     border-style: solid;
     border-color: rgba(13, 179, 13, 0.63);
+  }
+
+  h1>span{
+    color: tomato;
   }
