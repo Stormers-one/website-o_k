@@ -66,3 +66,7 @@
   border-style: solid;
   border-color: rgba(13, 179, 13, 0.63);
 }
+
+#noData{
+  color: red;
+}

@@ -13,6 +13,7 @@ import { RegisterNewEmployeeComponent } from './facilities/employee-details/regi
 import { DisplayScheduleComponent } from './facilities/schedule/display-schedule/display-schedule.component'
 import { GenerateNewScheduleComponent } from './facilities/schedule/generate-new-schedule/generate-new-schedule.component'
 import { MapComponent } from './facilities/tracking/map/map.component';
+import { ComplainListComponent } from './facilities/customer-support/complain-list/complain-list.component';
 
 const routes: Routes = [
   { path: '', component: FacilitiesComponent },
@@ -28,6 +29,8 @@ const routes: Routes = [
   { path: 'mainBanner', component: MainBannerComponent },
   { path: 'facilities/employeeDetails/searchEmployee', component: SearchEmployeeComponent },
   { path: 'facilities/employeeDetails/registerEmployee', component: RegisterNewEmployeeComponent },
+  { path: 'facilities/customerSupport/complain-list',component: ComplainListComponent}
+
 
 
   // { path: '**', component: PageNotFoundComponent },

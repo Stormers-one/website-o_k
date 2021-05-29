@@ -1,7 +1,7 @@
 <div class="container">
     <div class="container-row">
         <div class="back-button-container">
-            <button routerLink="/" routerLinkActive="active" (click)="goBack()">back</button>
+            <button routerLink="/" routerLinkActive="active" (click)="goBackOnce()">back</button>
         </div>
         <div class="container">
             <h1>Customer Support</h1>
@@ -17,10 +17,25 @@
                 </a>
             </figure>
         </div>
-        <form  action="/action_page.php">
-            <label for="B"><br><b>Enter Route Name</b> </label><br>
-            <input type="text" id="Bnum" name="Bnum" required><br><br><br>
-            <input type="submit" value="View Customer Review">
-        </form> 
+        <form [formGroup]="complainantdropDownForm" (ngSubmit)="goToPage('complain-list')">
+            <div>
+                <label for="Complainant">Type of Complainant:  </label><br>
+                <select formControlName="Complainant">
+                    <option>Select Complainant </option>
+                    <option *ngFor="let i of Complainant">{{i}}</option>
+                </select><br><br>
+                <label for="Complainant">Route :  </label><br>
+                <select formControlName="Route">
+                    <option>Select Route </option>
+                    <option *ngFor="let i of Route">{{i}}</option>
+                </select><br><br>
+                <!-- 
+                <div *ngIf="validateFunction.busInfo.touched && validateFunction.busInfo.invalid">
+                    <div *ngIf="validateFunction.busInfo.errors.required">Name is required.</div>
+                </div> -->
+
+            </div>
+            <button type="submit" [disabled]="!complainantdropDownForm.valid">Submit</button>
+        </form>
     </div>
 </div>

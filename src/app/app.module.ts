@@ -33,6 +33,7 @@ import { MapService } from './shared/services/map.service';
 import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ComplainListComponent } from './facilities/customer-support/complain-list/complain-list.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegisterNewEmployeeComponent,
     MapComponent,
     EmployeeTableComponent,
+    ComplainListComponent,
     
   ],
   imports: [
