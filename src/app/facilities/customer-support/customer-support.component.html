@@ -21,12 +21,12 @@
             <div>
                 <label for="Complainant">Type of Complainant:  </label><br>
                 <select formControlName="Complainant">
-                    <option [ngValue]="null">Select Complainant </option>
+                    <option>Select Complainant </option>
                     <option *ngFor="let i of Complainant">{{i}}</option>
                 </select><br><br>
                 <label for="Complainant">Route :  </label><br>
                 <select formControlName="Route">
-                    <option [ngValue]="null">Select Route </option>
+                    <option>Select Route </option>
                     <option *ngFor="let i of Route">{{i}}</option>
                 </select><br><br>
                 <!-- 

@@ -31,8 +31,8 @@ export class CustomerSupportComponent implements OnInit {
   }
 
   complainantdropDownForm = new FormGroup({
-    Complainant: new FormControl('null', Validators.required),
-    Route: new FormControl('null', Validators.required)
+    Complainant: new FormControl('', Validators.required),
+    Route: new FormControl('', Validators.required)
   });
   get validateFunction() {
     return this.complainantdropDownForm.controls;
