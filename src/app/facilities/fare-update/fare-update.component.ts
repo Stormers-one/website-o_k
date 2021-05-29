@@ -19,14 +19,22 @@ export class FareUpdateComponent implements OnInit {
   }
 
   validators: boolean[];
+  busTypes: (string | undefined)[];
 
   constructor(private router: Router, private _location: Location, private fareservice : FareService) {
     this.validators = [true, true, true];
+    this.busTypes = [];
   }
   document: Fare = new Fare();
   submitted = false;
 
   ngOnInit(): void {
+    this.fareservice.getFare().snapshotChanges().subscribe((data)=>{
+      this.busTypes = data.map((a)=>{
+        const data = a.payload.doc.data().bus_type;
+        return data;
+      })
+    })
   }
 
   saveFare():void{
