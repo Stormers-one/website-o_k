@@ -14,12 +14,11 @@ export class AppComponent {
   userAuth: Subscription;
 
   constructor(private fs: FireAuthService, private router: Router) {
-    this.signedIn = true;
     this.userAuth = this.fs.signedIn.subscribe((user) => {
       if (user) {
         this.signedIn = true;
       } else {
-        this.router.navigate(['signin']);
+        this.router.navigate(['signIn']);
       }
     });
   }
