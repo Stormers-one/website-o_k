@@ -34,6 +34,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComplainListComponent } from './facilities/customer-support/complain-list/complain-list.component';
+import { WrapperComponent } from './wrapper/wrapper.component';
+import { SignInComponent } from './wrapper/sign-in/sign-in.component';
+import { RegisterComponent } from './wrapper/register/register.component';
 
 
 @NgModule({
@@ -51,6 +54,9 @@ import { ComplainListComponent } from './facilities/customer-support/complain-li
     MapComponent,
     EmployeeTableComponent,
     ComplainListComponent,
+    WrapperComponent,
+    SignInComponent,
+    RegisterComponent,
     
   ],
   imports: [
