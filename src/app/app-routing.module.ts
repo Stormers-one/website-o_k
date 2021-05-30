@@ -14,11 +14,17 @@ import { DisplayScheduleComponent } from './facilities/schedule/display-schedule
 import { GenerateNewScheduleComponent } from './facilities/schedule/generate-new-schedule/generate-new-schedule.component'
 import { MapComponent } from './facilities/tracking/map/map.component';
 import { ComplainListComponent } from './facilities/customer-support/complain-list/complain-list.component';
+import { WrapperComponent } from './wrapper/wrapper.component';
+import { SignInComponent } from './wrapper/sign-in/sign-in.component';
+import { RegisterComponent } from './wrapper/register/register.component';
 
 const routes: Routes = [
-  { path: '', component: FacilitiesComponent },
+  { path: '', component: WrapperComponent },
+  { path: 'signIn', component: SignInComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'facilities', component: FacilitiesComponent },
   { path: 'facilities/tracking', component: TrackingComponent },
-  { path: 'facilities/tracking/map', component: MapComponent, data:{Bustype: {...[] }}},
+  { path: 'facilities/tracking/map', component: MapComponent },
   { path: 'facilities/schedule', component: ScheduleComponent },
   { path: 'facilities/schedule/display-schedule', component: DisplayScheduleComponent },
   { path: 'facilities/schedule/generate-schedule', component: GenerateNewScheduleComponent },
@@ -29,7 +35,7 @@ const routes: Routes = [
   { path: 'mainBanner', component: MainBannerComponent },
   { path: 'facilities/employeeDetails/searchEmployee', component: SearchEmployeeComponent },
   { path: 'facilities/employeeDetails/registerEmployee', component: RegisterNewEmployeeComponent },
-  { path: 'facilities/customerSupport/complain-list',component: ComplainListComponent}
+  { path: 'facilities/customerSupport/complain-list', component: ComplainListComponent }
 
 
 

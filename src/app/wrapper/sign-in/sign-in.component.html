@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="container-row">
+        <div class="container">
+            <h1>Login</h1>
+        </div>        
+    </div>
+    <form>
+        <div>
+            <label for="emp_id"><br><b>Enter Employee ID</b> </label><br>
+            <input [(ngModel)]="user.emp_id">
+            <div *ngIf="!this.validators[0]">
+                <span id="validator">Invalid</span>
+            </div>
+        </div>
+        <div>
+            <label for="pswd"><br><b>Enter Password</b></label><br>
+            <input [(ngModel)]="user.pswd">
+            <div *ngIf="!this.validators[1]">
+                <span id="validator">Invalid</span>
+            </div>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Sign In" (click)="signIn()">
+        </div>
+        <br>
+        <div>
+            <button class = "register" (click)="goToPage('register')"><span>register instead</span></button>
+        </div>
+    </form>
+</div>

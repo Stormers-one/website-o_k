@@ -1,11 +1,13 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <span>Odu Komban</span>
-  <div class="spacer"></div>
+  <span class = "title">Odu Komban</span>
+  <div class="spacer-long"></div>
   <a id="github-logo" aria-label="Github project repo" target="_blank" rel="noopener"
     href="https://github.com/Stormers-one/website-o_k" title="Github">
     <img src="assets/icons/github.svg" height="30" width="30">
   </a>
+  <div class="spacer-short"></div>
+  <button class="signoutButton" *ngIf="signedIn" (click)="signOut()">sign out</button>
 </div>
 
 <app-main-banner></app-main-banner>
@@ -20,7 +22,7 @@
 
 <!-- Footer -->
 <footer>
-  <span>Copyright 2021 by Stormers-one</span>
+  <span>Copyright 2021 by Stormers</span>
 </footer>
 
 
