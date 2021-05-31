@@ -7,21 +7,21 @@
     <form>
         <div>
             <label for="emp_id"><br><b>Enter Employee ID</b> </label><br>
-            <input [(ngModel)]="user.emp_id">
+            <input [(ngModel)]="user.emp_id" #userForm>
             <div *ngIf="!this.validators[0]">
                 <span id="validator">Invalid</span>
             </div>
         </div>
         <div>
             <label for="pswd"><br><b>Enter Password</b></label><br>
-            <input [(ngModel)]="user.pswd">
+            <input [(ngModel)]="user.pswd" #pswdForm>
             <div *ngIf="!this.validators[1]">
                 <span id="validator">Invalid</span>
             </div>
         </div>
         <br>
         <div>
-            <input type="submit" value="Sign In" (click)="signIn()">
+            <input type="submit" value="Sign In" (click)="signIn(userForm.value,pswdForm.value)">
         </div>
         <br>
         <div>

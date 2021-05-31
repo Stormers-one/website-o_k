@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import User from 'src/app/shared/models/User/user';
@@ -27,6 +28,11 @@ export class SignInComponent implements OnInit {
   validators: boolean[];
   user: User;
 
+  // userForm = new FormGroup({
+  //   emp_id: new FormControl('', [Validators.minLength(0), Validators.pattern(/([\w]+@[\w]+.[\w]+)/g)]),
+  //   pswd: new FormControl('', Validators.minLength(6))
+  // })
+
   empValidate(emp: string): boolean {
     if (emp.match(/(\w)/) && emp.match(/(@)/g) && emp.length > 0) {
       return true;
@@ -42,13 +48,13 @@ export class SignInComponent implements OnInit {
     };
   }
 
-  validate() {
+  validate(user:string,pswd:string):boolean {
     this.validators[0] = false
-    if (this.empValidate(this.user.emp_id)) {
+    if (this.empValidate(user)) {
       this.validators[0] = true
     }
     this.validators[1] = false;
-    if (this.pswdValidate(this.user.pswd)) {
+    if (this.pswdValidate(pswd)) {
       this.validators[1] = true;
     }
     if (this.validators[1] && this.validators[0]) {
@@ -59,13 +65,14 @@ export class SignInComponent implements OnInit {
     }
   }
 
-  async signIn() {
+  async signIn(user:string,pswd:string) {
     try {
-      console.log(this.validate())
-      if (!this.validate()) throw new Error('Invalid sign-in credentials');
-      const result = await this.fs.signIn(this.user.emp_id, this.user.pswd);
+      console.log(this.validate(user,pswd))
+      console.log(user);
+      if (!this.validate(user,pswd)) throw new Error('Invalid sign-in credentials');
+      const result = await this.fs.signIn(user, pswd);
       console.log('Sign in successful!', result);
-      if (result) this.router.navigate(['/facilites']);
+      if (result) this.router.navigate(['/facilities']);
       else throw new Error('Sign-in failed');
     } catch (error) {
       console.log(error);

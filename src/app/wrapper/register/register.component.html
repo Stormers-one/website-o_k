@@ -11,49 +11,50 @@
     <form>
         <div>
             <label for="emp_id"><br><b>Enter Employee ID</b> </label><br>
-            <input [(ngModel)]="user.emp_id">
+            <input [(ngModel)]="user.emp_id" #emp_id>
             <div *ngIf="!this.validators[0]">
                 <span id="validator">Invalid Employee ID</span>
             </div>
         </div>
         <div>
+            <label for="mail"><br><b>Enter E-Mail Address</b> </label><br>
+            <input [(ngModel)]="user.mail" #mail>
+            <div *ngIf="!this.validators[0]">
+                <span id="validator">Invalid Mail ID</span>
+            </div>
+        </div>
+        <div>
             <label for="phn_no"><br><b>Enter Phone No</b> </label><br>
-            <input [(ngModel)]="user.phn_no">
+            <input [(ngModel)]="user.phn_no" #phnno>
             <div *ngIf="!this.validators[1]">
                 <span id="validator">Invalid Phone no</span>
             </div>
         </div>
         <div>
-            <label for="district"><br><b>Enter district</b> </label><br>
-            <input [(ngModel)]="user.district">
-            <div *ngIf="!this.validators[2]">
-                <span id="validator">Invalid District</span>
-            </div>
-        </div>
-        <div>
             <label for="service_key"><br><b>Enter Unique Service Key</b> </label><br>
-            <input [(ngModel)]="user.service_key">
+            <input #serviceKey>
             <div *ngIf="!this.validators[3]">
                 <span id="validator">Invalid Service Key</span>
             </div>
         </div>
         <div>
             <label for="pswd"><br><b>Enter Password</b></label><br>
-            <input [(ngModel)]="user.pswd1">
+            <input #pswd1>
             <div *ngIf="!this.validators[4]">
                 <span id="validator">Invalid Password</span>
             </div>
         </div>
         <div>
             <label for="pswd"><br><b>Confirm Password</b></label><br>
-            <input [(ngModel)]="user.pswd2">
+            <input #pswd2>
             <div *ngIf="!this.validators[5]">
                 <span id="validator">The passwords do not match</span>
             </div>
         </div>
         <br>
         <div>
-            <input type="submit" value="Register" (click)="register()">
+            <input type="submit" value="Register"
+                (click)="register(emp_id.value,phnno.value,serviceKey.value,pswd1.value,pswd2.value,mail.value)">
         </div>
     </form>
 </div>
