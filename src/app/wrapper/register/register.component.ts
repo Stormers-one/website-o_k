@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
   }
 
   phnNoValidate(phn_no: string): boolean {
-    if (phn_no.length === 10 && this.isAlpha(phn_no)) {
+    if (phn_no.length == 10 && this.isAlpha(phn_no)) {
       return true;
     } else {
       return false;

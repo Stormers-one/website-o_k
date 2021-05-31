@@ -8,12 +8,21 @@ import { FireAuthService } from './shared/services/fire-auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'website-ok';
-  signedIn: any;
-  userAuth: Subscription;
+  signedIn: boolean = false;
+  userAuth!: Subscription;
 
   constructor(private fs: FireAuthService, private router: Router) {
+    // this.userAuth = this.fs.signedIn.subscribe((user) => {
+    //   if (user) {
+    //     this.signedIn = true;
+    //   } else {
+    //     this.router.navigate(['signIn']);
+    //   }
+    // });
+  }
+  ngOnInit(){
     this.userAuth = this.fs.signedIn.subscribe((user) => {
       if (user) {
         this.signedIn = true;
@@ -22,6 +31,7 @@ export class AppComponent {
       }
     });
   }
+
 
   signOut() {
     console.log("signout");
