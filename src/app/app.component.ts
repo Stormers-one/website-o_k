@@ -10,27 +10,21 @@ import { FireAuthService } from './shared/services/fire-auth.service';
 })
 export class AppComponent implements OnInit{
   title = 'website-ok';
-  signedIn: boolean = false;
-  userAuth!: Subscription;
+  signedIn: boolean;
+  userAuth: Subscription;
 
   constructor(private fs: FireAuthService, private router: Router) {
-    // this.userAuth = this.fs.signedIn.subscribe((user) => {
-    //   if (user) {
-    //     this.signedIn = true;
-    //   } else {
-    //     this.router.navigate(['signIn']);
-    //   }
-    // });
-  }
-  ngOnInit(){
+    this.signedIn = false;
     this.userAuth = this.fs.signedIn.subscribe((user) => {
       if (user) {
         this.signedIn = true;
+        console.log("Set true")
       } else {
         this.router.navigate(['signIn']);
       }
     });
   }
+  ngOnInit(){this.signedIn = true;}
 
 
   signOut() {

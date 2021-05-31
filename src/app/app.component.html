@@ -7,7 +7,7 @@
     <img src="assets/icons/github.svg" height="30" width="30">
   </a>
   <div class="spacer-short"></div>
-  <button class="signoutButton" *ngIf="signedIn" (click)="signOut()">sign out</button>
+  <button *ngIf="signedIn" class="signoutButton" (click)="signOut()">sign out</button>
 </div>
 
 <app-main-banner></app-main-banner>
