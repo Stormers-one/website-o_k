@@ -95,8 +95,8 @@ export class RegisterComponent implements OnInit {
   }
 
 
-  validate(emp_id: string, phnno: string, service_key: string, pswd1: string, pswd2: string, mail:string) {
-    this.validators = [false,false,false,false,false,false,false]
+  validate(emp_id: string, phnno: string, service_key: string, pswd1: string, pswd2: string, mail: string) {
+    this.validators = [false, false, false, false, false, false]
     if (this.empValidate(emp_id)) {
       this.validators[0] = true
     }
@@ -112,7 +112,7 @@ export class RegisterComponent implements OnInit {
     if (this.pswdValidate(pswd1)) {
       this.validators[4] = true;
     }
-    if (pswd1.match(pswd2) && pswd1.length > 0) {
+    if (pswd1===pswd2 && pswd1.length > 0) {
       this.validators[5] = true;
     }
     if (this.validators[0] &&
@@ -128,22 +128,21 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  async register(name: string, phnno: string, service_key: string, pswd1: string, pswd2: string, mail:string) {
+  async register(name: string, phnno: string, service_key: string, pswd1: string, pswd2: string, mail: string) {
     this.user.name = name;
     this.user.phn_no = phnno;
     this.user.mail = mail;
-    this.user.emp_id = String(mail.match(/([\w]+)@/)![1]);
+    this.user.emp_id = String(mail.match(/([\w]+)@/g)).slice(0, -1);
     console.log(this.user)
-    try {
-      if (!this.validate(name, phnno, service_key, pswd1, pswd2,mail)) throw new Error('Invalid credentials');
+    let resVal = this.validate(name, phnno, service_key, pswd1, pswd2, mail)
+    if (resVal) {
       const result = await this.fs.register(mail, pswd1);
       console.log('Registration successful!', result);
       const res = await this.employeeService.registerEmployee(this.user);
       if (result) this.router.navigate(['/facilites']);
-      else throw new Error('Registeration failed');
-    } catch (error) {
-      console.log(error);
-    }
+      else console.log("Registeration failed")
+    } else console.log("Invalid credentials")
+
   }
 
 
