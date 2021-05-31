@@ -131,6 +131,12 @@ label {
   color: red;
 }
 
+select,
+  button[type=submit],
+  input {
+    min-width: 250px;
+  }
+
 button[type=submit]:disabled {
   /*transform: translateY(-0.20rem);*/
   background-color: #808a80;
@@ -139,24 +145,6 @@ button[type=submit]:disabled {
 input[type=submit]:disabled {
   /*transform: translateY(-0.20rem);*/
   background-color: #808a80;
-}
-
-@media screen and (max-width: 500px) {
-
-  select,
-  button[type=submit],
-  input {
-    width: 60%;
-  }
-}
-
-@media screen and (max-width: 700px) {
-
-  select,
-  button[type=submit],
-  input {
-    width: 55%;
-  }
 }
 
 /* @media screen and (max-width: 575px) {
