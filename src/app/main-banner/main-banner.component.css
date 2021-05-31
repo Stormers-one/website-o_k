@@ -1,24 +1,31 @@
 .main-banner {
   /* width: 100%; */
-  margin: 112px auto 32px;
+  margin: 112px auto 10px;
   /* display: flex;
     flex-direction: column;
     justify-content: center; */
   align-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+#spacer{
+  flex: 1;
 }
 
 .main-banner #banner-img {
-  max-width: 960px;
+  max-width: 750px;
   width: 100%;
   position: relative;
   height: auto;
+  padding-bottom: 5px;
 }
 
-figure figcaption {
+/* figure figcaption {
   text-align: right;
   position: relative;
-
-}
+  
+} */
 
 .main-banner figcaption {
   position: absolute;
