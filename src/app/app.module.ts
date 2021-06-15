@@ -33,6 +33,7 @@ import { ComplainListComponent } from './facilities/customer-support/complain-li
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { SignInComponent } from './wrapper/sign-in/sign-in.component';
 import { RegisterComponent } from './wrapper/register/register.component';
+import { TimeSlotsComponent } from './facilities/schedule/display-schedule/time-slots/time-slots.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { RegisterComponent } from './wrapper/register/register.component';
     WrapperComponent,
     SignInComponent,
     RegisterComponent,
+    TimeSlotsComponent,
     
   ],
   imports: [

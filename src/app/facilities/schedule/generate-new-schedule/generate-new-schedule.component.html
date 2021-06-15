@@ -10,11 +10,6 @@
     
     <!-- Develop this div appropriately -->
     <div class="container">
-        <form  action="/action_page.php">
-
-            <label for="name"><br><b>Enter Stop Name</b> </label><br>
-            <input type="text" id="name" name="name" required><br><br><br>
-            <input type="submit" value="Generate New Schedule" >
-        </form>
+        <app-suggestedschedule-table [schedule]="schedule"></app-suggestedschedule-table>
     </div>
 </div>
