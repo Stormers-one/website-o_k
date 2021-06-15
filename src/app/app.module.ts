@@ -13,25 +13,21 @@ import { MainBannerComponent } from './main-banner/main-banner.component';
 import { SearchEmployeeComponent } from './facilities/employee-details/search-employee/search-employee.component';
 import { RegisterNewEmployeeComponent } from './facilities/employee-details/register-new-employee/register-new-employee.component';
 
-
 // Firebase integration
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
-
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+
 import { MapComponent } from './facilities/tracking/map/map.component';
 import {PrivateConfig } from '../private_config';
 import { AgmCoreModule } from '@agm/core';
 import { EmployeeTableComponent } from './facilities/employee-details/search-employee/employee-table/employee-table.component';
-
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
-
 import { MapService } from './shared/services/map.service';
 import { HttpClientModule } from '@angular/common/http';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComplainListComponent } from './facilities/customer-support/complain-list/complain-list.component';
 import { WrapperComponent } from './wrapper/wrapper.component';

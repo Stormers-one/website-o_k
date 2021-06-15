@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { FireAuthService } from './shared/services/fire-auth.service';
@@ -8,23 +8,26 @@ import { FireAuthService } from './shared/services/fire-auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnDestroy{
   title = 'website-ok';
-  signedIn: boolean;
+  signedIn: any;
   userAuth: Subscription;
 
   constructor(private fs: FireAuthService, private router: Router) {
-    this.signedIn = false;
+    this.signedIn = this.fs.signedIn
     this.userAuth = this.fs.signedIn.subscribe((user) => {
       if (user) {
         this.signedIn = true;
         console.log("Set true")
       } else {
+        this.signedIn = true;
         this.router.navigate(['signIn']);
       }
     });
   }
-  ngOnInit(){this.signedIn = true;}
+  ngOnInit(){
+    this.signedIn = this.fs.signedIn
+  }
 
 
   signOut() {
@@ -32,5 +35,8 @@ export class AppComponent implements OnInit{
     this.signedIn = false;
     this.router.navigate(['signIn'])
     this.fs.signOut()
+  }
+  ngOnDestroy(){
+    if (this.userAuth) this.userAuth.unsubscribe();
   }
 }

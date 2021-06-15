@@ -15,15 +15,15 @@ export class CustomercareService {
     return this.document;
   }
   getFeedbackPassenger(route: string) {
-    let ref = this.db.collection("Route Feedback").doc("101").collection("Passenger Complaints");
-    let res;
-    ref.snapshotChanges().subscribe(data => {
-      data.map((a) => {
-        res = a.payload.doc.data();
-        return res;
-      });
-    });
-    console.log(`Route ${res}`);
+    // let ref = this.db.collection("Route Feedback").doc(route).collection("Passenger Complaints");
+    // let res;
+    // ref.snapshotChanges().subscribe(data => {
+    //   data.map((a) => {
+    //     res = a.payload.doc.data();
+    //     return res;
+    //   });
+    // });
+    // console.log(`Route ${res}`);
     return this.document.doc(route).collection("Passenger Complaints");
   }
   getFeedbackDriverConductor(route: string) {

@@ -30,7 +30,7 @@ export class TrackingComponent implements OnInit {
   ///////// Filtering bus data /////////
   filterData(opt:any):Busdata{
     this.result = this.Busdata.filter(function(buses) {
-      return buses.Bus_id == opt;
+      return buses.Bus_ID == opt;
     });
 
     return this.result;
