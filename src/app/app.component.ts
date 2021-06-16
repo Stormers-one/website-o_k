@@ -11,7 +11,7 @@ import { FireAuthService } from './shared/services/fire-auth.service';
 export class AppComponent implements OnInit, OnDestroy{
   title = 'website-ok';
   signedIn: any;
-  userAuth: Subscription;
+  public userAuth: Subscription;
 
   constructor(private fs: FireAuthService, private router: Router) {
     this.signedIn = this.fs.signedIn
@@ -19,8 +19,10 @@ export class AppComponent implements OnInit, OnDestroy{
       if (user) {
         this.signedIn = true;
         console.log("Set true")
+        this.router.navigate(['facilities']);
       } else {
         this.signedIn = true;
+        console.log("Set false")
         this.router.navigate(['signIn']);
       }
     });

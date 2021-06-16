@@ -14,12 +14,12 @@ import { DisplayScheduleComponent } from './facilities/schedule/display-schedule
 import { GenerateNewScheduleComponent } from './facilities/schedule/generate-new-schedule/generate-new-schedule.component'
 import { MapComponent } from './facilities/tracking/map/map.component';
 import { ComplainListComponent } from './facilities/customer-support/complain-list/complain-list.component';
-import { WrapperComponent } from './wrapper/wrapper.component';
 import { SignInComponent } from './wrapper/sign-in/sign-in.component';
 import { RegisterComponent } from './wrapper/register/register.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: '', component: WrapperComponent },
+  { path: '', component: AppComponent },
   { path: 'signIn', component: SignInComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'facilities', component: FacilitiesComponent },

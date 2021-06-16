@@ -30,11 +30,10 @@ import { MapService } from './shared/services/map.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComplainListComponent } from './facilities/customer-support/complain-list/complain-list.component';
-import { WrapperComponent } from './wrapper/wrapper.component';
 import { SignInComponent } from './wrapper/sign-in/sign-in.component';
 import { RegisterComponent } from './wrapper/register/register.component';
 import { TimeSlotsComponent } from './facilities/schedule/display-schedule/time-slots/time-slots.component';
-
+import { FireAuthService } from './shared/services/fire-auth.service'
 
 @NgModule({
   declarations: [
@@ -51,7 +50,6 @@ import { TimeSlotsComponent } from './facilities/schedule/display-schedule/time-
     MapComponent,
     EmployeeTableComponent,
     ComplainListComponent,
-    WrapperComponent,
     SignInComponent,
     RegisterComponent,
     TimeSlotsComponent,
@@ -73,7 +71,7 @@ import { TimeSlotsComponent } from './facilities/schedule/display-schedule/time-
     NgxPageScrollCoreModule.forRoot({ duration: 1600 }),
     NgxPaginationModule
   ],
-  providers: [MapService],
+  providers: [MapService, FireAuthService],
   bootstrap: [AppComponent]
   
 })

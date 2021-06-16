@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DisplayScheduleComponent } from './display-schedule/display-schedule.component';
 import { GenerateNewScheduleComponent } from './generate-new-schedule/generate-new-schedule.component';
 import { Router } from '@angular/router';  
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-schedule',
@@ -18,10 +19,9 @@ export class ScheduleComponent implements OnInit {
     .catch(console.error);   
   }
   goBackOnce(){
-    this.router.navigate(['../']).then(success => console.log('navigation success?' , success))
-    .catch(console.error);   
+    this._location.back();
   }
-  constructor(private router: Router,) {}
+  constructor(private router: Router,private _location: Location) {}
 
   ngOnInit(): void {
   }
