@@ -17,6 +17,7 @@ import { ComplainListComponent } from './facilities/customer-support/complain-li
 import { SignInComponent } from './wrapper/sign-in/sign-in.component';
 import { RegisterComponent } from './wrapper/register/register.component';
 import { AppComponent } from './app.component';
+import { TimetableComponent } from './facilities/schedule/display-schedule/timetable/timetable.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
@@ -35,7 +36,8 @@ const routes: Routes = [
   { path: 'mainBanner', component: MainBannerComponent },
   { path: 'facilities/employeeDetails/searchEmployee', component: SearchEmployeeComponent },
   { path: 'facilities/employeeDetails/registerEmployee', component: RegisterNewEmployeeComponent },
-  { path: 'facilities/customerSupport/complain-list', component: ComplainListComponent }
+  { path: 'facilities/customerSupport/complain-list', component: ComplainListComponent },
+  { path: 'facilities/schedule/display-schedule/timetable', component: TimetableComponent }
 
 
 

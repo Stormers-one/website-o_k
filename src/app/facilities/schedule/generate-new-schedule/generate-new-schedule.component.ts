@@ -15,7 +15,7 @@ export class GenerateNewScheduleComponent implements OnInit  {
   @Input() schedule: Schedule[];
 
   goBack() {
-    this.router.navigate(['/']).then(success => console.log('navigation success?', success))
+    this.router.navigate(['/facilities/schedule/']).then(success => console.log('navigation success?', success))
       .catch(console.error);
   }
   goBackOnce() {

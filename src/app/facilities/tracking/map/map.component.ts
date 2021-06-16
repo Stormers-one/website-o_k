@@ -35,10 +35,6 @@ export class MapComponent implements OnInit {
     this.long = Number(this.Busdata[0]["Longitude"]);
 
   }
-
-  ngOnDestroy() {
-    this.Busdata;
-  }
   lat: number = 0.0;
   long: number = 0.0;
   zoom: number = 18;
