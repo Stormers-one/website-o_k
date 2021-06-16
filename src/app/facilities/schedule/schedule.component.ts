@@ -11,11 +11,11 @@ import { Location } from '@angular/common';
 })
 export class ScheduleComponent implements OnInit {
   goToPage(link:string){
-    this.router.navigate(['/facilities/schedule/'+link]).then(success => console.log('navigation success?' , success))
+    this.router.navigateByUrl('/facilities/schedule/'+link).then(success => console.log('navigation success?' , success))
     .catch(console.error);   
   }
   goBack(){
-    this.router.navigate(['/']).then(success => console.log('navigation success?' , success))
+    this.router.navigate(['/facilities/']).then(success => console.log('navigation success?' , success))
     .catch(console.error);   
   }
   goBackOnce(){

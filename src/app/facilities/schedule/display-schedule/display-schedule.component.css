@@ -1,0 +1,20 @@
+.listSuggestions{
+    background-color: white;
+    width: 80%;
+    max-width: 400px;
+    max-height: 180px;
+    overflow-y: scroll;
+    border-radius: 15px;
+}
+#spacer{
+    flex: 1;
+}
+.suggestionsOuterContainer{
+    display: flex;
+    flex-direction: row;
+}
+.listItems{
+    text-align: left;
+    list-style-type: none;
+    cursor: pointer;
+}

@@ -34,6 +34,14 @@ import { SignInComponent } from './wrapper/sign-in/sign-in.component';
 import { RegisterComponent } from './wrapper/register/register.component';
 import { TimeSlotsComponent } from './facilities/schedule/display-schedule/time-slots/time-slots.component';
 import { FireAuthService } from './shared/services/fire-auth.service'
+import { DisplayScheduleComponent } from './facilities/schedule/display-schedule/display-schedule.component';
+import { GenerateNewScheduleComponent } from './facilities/schedule/generate-new-schedule/generate-new-schedule.component';
+import { FilterPipe } from './shared/pipes/search-filter.pipe';
+import { FareService } from './shared/services/fare.service';
+import { RegisterKeyService } from './shared/services/register-key.service';
+import { EmployeeService } from './shared/services/employee.service';
+import { CustomercareService } from './shared/services/customercare.service';
+import { BusStopsService } from './shared/services/bus-stops.service';
 
 @NgModule({
   declarations: [
@@ -46,6 +54,8 @@ import { FireAuthService } from './shared/services/fire-auth.service'
     EmployeeDetailsComponent,
     MainBannerComponent,
     SearchEmployeeComponent,
+    DisplayScheduleComponent,
+    GenerateNewScheduleComponent,
     RegisterNewEmployeeComponent,
     MapComponent,
     EmployeeTableComponent,
@@ -53,7 +63,7 @@ import { FireAuthService } from './shared/services/fire-auth.service'
     SignInComponent,
     RegisterComponent,
     TimeSlotsComponent,
-    
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +81,15 @@ import { FireAuthService } from './shared/services/fire-auth.service'
     NgxPageScrollCoreModule.forRoot({ duration: 1600 }),
     NgxPaginationModule
   ],
-  providers: [MapService, FireAuthService],
+  providers: [
+    MapService, 
+    FireAuthService,
+    FareService,
+    RegisterKeyService,
+    EmployeeService,
+    CustomercareService,
+    BusStopsService,
+  ],
   bootstrap: [AppComponent]
   
 })
