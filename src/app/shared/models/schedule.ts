@@ -1,6 +1,6 @@
 export default class Schesule {
     count?:string;
-    rounte_name?:string;
+    routeName?:string;
     status?:string;
   
 }

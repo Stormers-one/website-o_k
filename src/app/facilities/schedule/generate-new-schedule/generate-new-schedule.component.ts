@@ -15,43 +15,25 @@ export class GenerateNewScheduleComponent implements OnInit  {
   @Input() schedule: Schedule[];
 
   goBack() {
-    this.router.navigate(['/facilities/schedule/']).then(success => console.log('navigation success?', success))
-      .catch(console.error);
+    this.router.navigate(['/facilities/schedule/']).then(success => console.log('navigation success?', success)).catch(console.error);
   }
   goBackOnce() {
     this._location.back();
   }
-  
-  // ngOnChanges(changes: SimpleChanges) {
-  //   console.log(changes['schedule'].currentValue);
-  //   if(changes['schedule'].currentValue.length==0){
-  //     this.noData = true;
-  //   }
-  //   else{
-  //     this.noData = false;
-  //   }
-  // }
 
   constructor(private router: Router, private _location: Location,private scheduleService: ScheduleService) {
     this.schedule=[];
-    
   }
- 
 
   ngOnInit(): void {
     this.scheduleService.getSchedule().snapshotChanges().subscribe(data => {
       this.schedule = data.map((a) => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;
-        // console.log(data.name);
+        console.log(data);
         return { ...data };
       });
-      console.log(this.schedule)
-      // this.docLen = this.schedule.length;
-      // this.employeeFiltered= this.schedule;
-      
     });
-    console.log(this.schedule)
   }
   
   buttonPressed() {

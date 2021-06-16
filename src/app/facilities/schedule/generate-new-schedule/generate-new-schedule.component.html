@@ -10,11 +10,11 @@
 
     <div class="table">
         <div class="table-header">
-            <div class="td-count">
-                <span>Count</span>
-            </div>
             <div class="td-name">
                 <span>Route Name</span>
+            </div>
+            <div class="td-count">
+                <span>Count</span>
             </div>
             <div class="td-status">
                 <span>Status</span>
@@ -26,19 +26,20 @@
         <div class="table-container">
             <button *ngFor="let schedule of schedule "
                 class="table-body" (click)="buttonPressed()">
+                <div class="td-name">
+                    <span>{{schedule.routeName}}</span>
+                </div>
                 <div class="td-count">
                     <span>{{schedule.count}}</span>
                 </div>
-                <div class="td-name">
-                    <span>{{schedule.route_name}}</span>
-                </div>
+
                 <div class="td-status">
                     <span>{{schedule.status}}</span>
                 </div>
             </button>
-            <div *ngIf="noData" id="noData" class= "table-body">
+            <!-- <div *ngIf="noData" id="noData" class= "table-body">
                 <span>No Matching Results</span>
-            </div>
+            </div> -->
         </div>
 
     </div>
