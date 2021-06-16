@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-generate-new-schedule',
   templateUrl: './generate-new-schedule.component.html',
@@ -15,9 +16,14 @@ export class GenerateNewScheduleComponent implements OnInit {
   goBackOnce() {
     this._location.back();
   }
-  constructor(private router: Router, private _location: Location) { }
+  
+  constructor(private router: Router, private _location: Location) {
+    
+  }
+ 
 
   ngOnInit(): void {
+    
   }
 
 }
