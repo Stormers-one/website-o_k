@@ -10,31 +10,31 @@
 
     <!-- Develop this div appropriately -->
     <div class="container">
-        <form action="/action_page.php">
-            <label for="name"><br><b>Enter Start Stop</b> </label><br>
-            <input [(ngModel)]='selectedBusFrom' (ngModelChange)='changeFrom()' type="text" id="name" name="name" required
-                autocomplete="off"><br><br><br>
-            <label for="name"><br><b>Enter Destination Stop</b> </label><br>
-            <input [(ngModel)]='selectedBusTo' (ngModelChange)='changeTo()' type="text" id="name" name="name" required
-                autocomplete="off"><br><br><br>
+        <form>
+            <label for="start"><br><b>Enter Start Stop</b> </label><br>
+            <input [(ngModel)]='selectedBusFrom' (ngModelChange)='changeFrom()' type="text" id="start" name="start" required
+                autocomplete="off"><br>
+            <label for="destination"><br><b>Enter Destination Stop</b> </label><br>
+            <input [(ngModel)]='selectedBusTo' (ngModelChange)='changeTo()' type="text" id="destination" name="destination" required
+                autocomplete="off"><br>
             <div class='suggestionsOuterContainer'>
                 <div id='spacer'></div>
                 <div class="listSuggestions">
                     <div *ngIf='enteredTextFrom'>
                         <div class='listItems' *ngFor="let stop of stopNames | appFilter: selectedBusFrom">
-                            <a (click)='sendToFieldFrom(stop)'>{{stop}}</a>
+                            <button (click)='sendToFieldFrom(stop)'>{{stop}}</button>
                         </div>
                     </div>
                     <div *ngIf='enteredTextTo'>
                         <div class='listItems' *ngFor="let stop of stopNames | appFilter: selectedBusTo">
-                            <a (click)='sendToFieldTo(stop)'>{{stop}}</a>
+                            <button (click)='sendToFieldTo(stop)'>{{stop}}</button>
                         </div>
                     </div>
                 </div>
                 <div id='spacer'></div>
             </div>
 
-            <input type="submit" value="View Schedule">
+            <input type="submit" value="View Schedule" (click)="submit()">
         </form>
 
     </div>

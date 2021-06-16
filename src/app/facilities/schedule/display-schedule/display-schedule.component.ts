@@ -17,6 +17,33 @@ export class DisplayScheduleComponent implements OnInit {
   goBackOnce() {
     this._location.back();
   }
+  exp = new RegExp('([\w ]+)[^(\w+)]?')
+  async getRouteName(query:string){
+    let exp = new RegExp(/([\w ]+)[^(\w+)]?/)
+    let s = query;
+    let c = s.split('')
+    let res = s.match(exp)![0]
+    res = res.trim().toLocaleLowerCase()
+    let listA = res.split(" ")
+    let newList = []
+    for(var r of listA){
+        if(r!=='bs'){
+            newList.push(r)
+        }
+    }
+    res = newList.join(' ')
+    res = res[0].toUpperCase() + res.substr(1)
+    return res
+}
+  async submit(){
+    let obj
+    let _from = await this.getRouteName(this.selectedBusFrom)
+    let _to = await this.getRouteName(this.selectedBusTo)
+    let query = _from + ' - ' + _to
+    console.log(query)
+    await this.busStopService.getRoutes(query);
+    // this.router.navigateByUrl('/facilities/schedule/display-schedule/timetable/', { state: obj })
+  }
   enteredTextFrom;
   enteredTextTo;
   selectedBusFrom: string;
@@ -46,6 +73,7 @@ export class DisplayScheduleComponent implements OnInit {
     else{
       this.enteredTextFrom = false;
     }
+    this.enteredTextTo = false;
   }
   changeTo(){
     if(this.selectedBusTo!==''){
@@ -54,6 +82,7 @@ export class DisplayScheduleComponent implements OnInit {
     else{
       this.enteredTextTo= false;
     }
+    this.enteredTextFrom = false;
   }
   ngOnInit(): void {
     this.busStopService.getStops().snapshotChanges().subscribe(data => {
@@ -62,10 +91,7 @@ export class DisplayScheduleComponent implements OnInit {
         // console.log(data.name);
         return {...data};
       });
-      console.log(this.stops)
-
       this.stopNames = this.stops.map((e)=>e['Stop Name']);
-      console.log(this.stopNames)
     });
   }
 
