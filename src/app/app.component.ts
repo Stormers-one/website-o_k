@@ -27,7 +27,6 @@ export class AppComponent implements OnInit, OnDestroy {
     //   }
     // });
     var user = JSON.parse(localStorage.getItem('user')!)
-    console.log(user)
     if (user !== null && user !=='null' && user.uid !== null) {
       this.signedIn = true;
       console.log("Set true")
