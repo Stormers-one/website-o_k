@@ -65,7 +65,6 @@ export class SearchEmployeeComponent implements OnInit {
       });
       this.docLen = this.employee.length;
       this.employeeFiltered= this.employee;
-      
     });
   }
 

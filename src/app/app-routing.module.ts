@@ -14,15 +14,17 @@ import { DisplayScheduleComponent } from './facilities/schedule/display-schedule
 import { GenerateNewScheduleComponent } from './facilities/schedule/generate-new-schedule/generate-new-schedule.component'
 import { MapComponent } from './facilities/tracking/map/map.component';
 import { ComplainListComponent } from './facilities/customer-support/complain-list/complain-list.component';
-import { WrapperComponent } from './wrapper/wrapper.component';
 import { SignInComponent } from './wrapper/sign-in/sign-in.component';
 import { RegisterComponent } from './wrapper/register/register.component';
+import { AppComponent } from './app.component';
+import { TimetableComponent } from './facilities/schedule/display-schedule/timetable/timetable.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: WrapperComponent },
+  { path: '', component: AppComponent },
   { path: 'signIn', component: SignInComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'facilities', component: FacilitiesComponent },
+  { path: 'facilities', component: FacilitiesComponent, canActivate: [AuthGuard] },
   { path: 'facilities/tracking', component: TrackingComponent },
   { path: 'facilities/tracking/map', component: MapComponent },
   { path: 'facilities/schedule', component: ScheduleComponent },
@@ -35,7 +37,8 @@ const routes: Routes = [
   { path: 'mainBanner', component: MainBannerComponent },
   { path: 'facilities/employeeDetails/searchEmployee', component: SearchEmployeeComponent },
   { path: 'facilities/employeeDetails/registerEmployee', component: RegisterNewEmployeeComponent },
-  { path: 'facilities/customerSupport/complain-list', component: ComplainListComponent }
+  { path: 'facilities/customerSupport/complain-list', component: ComplainListComponent },
+  { path: 'facilities/schedule/display-schedule/timetable', component: TimetableComponent }
 
 
 

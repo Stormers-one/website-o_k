@@ -1,7 +1,7 @@
 <div class="container">
     <div class="container-row">
         <div class="back-button-container">
-            <button routerLink="/" routerLinkActive="active" (click)="goBack()">back</button>
+            <button (click)="goBackOnce()">back</button>
         </div>
         <div class="container">
             <h1>Bus Tracking</h1>
@@ -25,7 +25,7 @@
                 <select formControlName="busInfo" class="form-control">
                     <option disabled>Choose Bus</option>
                     <option>Select Bus</option>
-                    <option *ngFor="let Bus of Busdata">{{Bus.Bus_id}}</option>
+                    <option *ngFor="let Bus of Busdata">{{Bus.Bus_ID}}</option>
                 </select><br><br><br>
                 <!-- 
                 <div *ngIf="validateFunction.busInfo.touched && validateFunction.busInfo.invalid">

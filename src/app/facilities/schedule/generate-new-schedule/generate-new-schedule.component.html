@@ -1,20 +1,51 @@
 <div class="container">
     <div class="container-row">
         <div class="back-button-container">
-            <button routerLink="facilities/schedule" routerLinkActive="active" (click)="goBackOnce()">back</button>
+            <button (click)="goBackOnce()">back</button>
         </div>
         <div class="container">
-            <h1>Generate New Schedule</h1>
+            <h1>Suggested New Schedule</h1>
         </div>
+    </div>
+
+    <div class="table">
+        <div class="table-header">
+            <div class="td-name">
+                <span>Route Name</span>
+            </div>
+            <div class="td-count">
+                <span>Count</span>
+            </div>
+            <div class="td-status">
+                <span>Status</span>
+            </div>
+        </div>
+        <div class="spacer-height">
+
+        </div>
+        <div class="table-container">
+            <button *ngFor="let schedule of schedule "
+                class="table-body" (click)="buttonPressed()">
+                <div class="td-name">
+                    <span>{{schedule.routeName}}</span>
+                </div>
+                <div class="td-count">
+                    <span>{{schedule.count}}</span>
+                </div>
+
+                <div class="td-status">
+                    <span>{{schedule.status}}</span>
+                </div>
+            </button>
+            <!-- <div *ngIf="noData" id="noData" class= "table-body">
+                <span>No Matching Results</span>
+            </div> -->
+        </div>
+
     </div>
     
     <!-- Develop this div appropriately -->
     <div class="container">
-        <form  action="/action_page.php">
-
-            <label for="name"><br><b>Enter Stop Name</b> </label><br>
-            <input type="text" id="name" name="name" required><br><br><br>
-            <input type="submit" value="Generate New Schedule" >
-        </form>
+        <!-- <app-suggestedschedule-table [schedule]="schedule"></app-suggestedschedule-table> -->
     </div>
 </div>

@@ -8,11 +8,24 @@ import { Observable } from 'rxjs';
 })
 export class FireAuthService {
   public signedIn: Observable<any>;
-
+  userData:any
   constructor(public fs: AngularFirestore, public auth: AngularFireAuth) {
     this.signedIn = new Observable((subscriber) => {
       this.auth.onAuthStateChanged(subscriber);
     });
+    this.auth.authState.subscribe(user => {
+      if (user) {
+        this.userData = user;
+        localStorage.setItem('user', JSON.stringify(this.userData));
+      } else {
+        localStorage.setItem('user', "null");
+      }
+      // console.log(JSON.parse(localStorage.getItem('user')!));
+    })
+  }
+  get isLoggedIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    return (user !== 'null') ? true : false;
   }
 
   async signIn(email: string, password: string) {
@@ -39,6 +52,7 @@ export class FireAuthService {
   async signOut() {
     try {
       await this.auth.signOut();
+      localStorage.removeItem('user');
       return true;
     } catch (error) {
       console.log('Sign out failed', error);

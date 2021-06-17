@@ -13,31 +13,35 @@ import { MainBannerComponent } from './main-banner/main-banner.component';
 import { SearchEmployeeComponent } from './facilities/employee-details/search-employee/search-employee.component';
 import { RegisterNewEmployeeComponent } from './facilities/employee-details/register-new-employee/register-new-employee.component';
 
-
 // Firebase integration
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
-
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+
 import { MapComponent } from './facilities/tracking/map/map.component';
-import {PrivateConfig } from '../private_config';
+import { PrivateConfig } from '../private_config';
 import { AgmCoreModule } from '@agm/core';
 import { EmployeeTableComponent } from './facilities/employee-details/search-employee/employee-table/employee-table.component';
-
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
-
 import { MapService } from './shared/services/map.service';
 import { HttpClientModule } from '@angular/common/http';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComplainListComponent } from './facilities/customer-support/complain-list/complain-list.component';
-import { WrapperComponent } from './wrapper/wrapper.component';
 import { SignInComponent } from './wrapper/sign-in/sign-in.component';
 import { RegisterComponent } from './wrapper/register/register.component';
-
+import { FireAuthService } from './shared/services/fire-auth.service'
+import { DisplayScheduleComponent } from './facilities/schedule/display-schedule/display-schedule.component';
+import { GenerateNewScheduleComponent } from './facilities/schedule/generate-new-schedule/generate-new-schedule.component';
+import { FilterPipe } from './shared/pipes/search-filter.pipe';
+import { FareService } from './shared/services/fare.service';
+import { RegisterKeyService } from './shared/services/register-key.service';
+import { EmployeeService } from './shared/services/employee.service';
+import { CustomercareService } from './shared/services/customercare.service';
+import { BusStopsService } from './shared/services/bus-stops.service';
+import { TimetableComponent } from './facilities/schedule/display-schedule/timetable/timetable.component';
 
 @NgModule({
   declarations: [
@@ -50,14 +54,16 @@ import { RegisterComponent } from './wrapper/register/register.component';
     EmployeeDetailsComponent,
     MainBannerComponent,
     SearchEmployeeComponent,
+    DisplayScheduleComponent,
+    GenerateNewScheduleComponent,
     RegisterNewEmployeeComponent,
     MapComponent,
     EmployeeTableComponent,
     ComplainListComponent,
-    WrapperComponent,
     SignInComponent,
     RegisterComponent,
-    
+    FilterPipe,
+    TimetableComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +81,15 @@ import { RegisterComponent } from './wrapper/register/register.component';
     NgxPageScrollCoreModule.forRoot({ duration: 1600 }),
     NgxPaginationModule
   ],
-  providers: [MapService],
+  providers: [
+    MapService, 
+    FireAuthService,
+    FareService,
+    RegisterKeyService,
+    EmployeeService,
+    CustomercareService,
+    BusStopsService,
+  ],
   bootstrap: [AppComponent]
   
 })

@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="container-row">
+        <div class="back-button-container">
+            <button (click)="goBackOnce()">back</button>
+        </div>
+        <div class="container">
+            <h1>Schedule: <br><span>{{route}}</span></h1>
+        </div>
+    </div><!-- Develop this div appropriately -->
+    <div class="container">
+        <div class="table">
+            <div class="table-container">
+                <div *ngFor="let scheduleOne of schedule | paginate: { itemsPerPage: 10, currentPage: 1 }; let i = index;"
+                    class="scheduleBoxContainer">
+                    <div>
+                        <div class="table-header">
+                            <div class="td-user_id">
+                                <span>Name</span>
+                            </div>
+                            <div class="td-Comp">
+                                <span>Time</span>
+                            </div>
+                        </div>
+                        <div class="spacer-height">
+            
+                        </div>
+                        <div *ngFor='let _schedule of scheduleOne' class="table-body">
+                            <div class="td-user_id">
+                                <span>{{_schedule.name}}</span>
+                            </div>
+                            <div class="td-comp">
+                                <!-- <span>{{employee.phone_no}}</span> -->
+                                <span>{{_schedule.time}}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
