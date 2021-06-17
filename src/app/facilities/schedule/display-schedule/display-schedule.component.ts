@@ -36,13 +36,12 @@ export class DisplayScheduleComponent implements OnInit {
     return res
 }
   async submit(){
-    let obj
     let _from = await this.getRouteName(this.selectedBusFrom)
     let _to = await this.getRouteName(this.selectedBusTo)
     let query = _from + ' - ' + _to
-    console.log(query)
-    await this.busStopService.getRoutes(query);
-    // this.router.navigateByUrl('/facilities/schedule/display-schedule/timetable/', { state: obj })
+    let res = await this.busStopService.getRoutes(query);
+    let obj = [res,query]
+    this.router.navigateByUrl('/facilities/schedule/display-schedule/timetable', { state: obj })
   }
   enteredTextFrom;
   enteredTextTo;
