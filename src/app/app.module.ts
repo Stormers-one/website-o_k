@@ -21,7 +21,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { MapComponent } from './facilities/tracking/map/map.component';
-import {PrivateConfig } from '../private_config';
+import { PrivateConfig } from '../private_config';
 import { AgmCoreModule } from '@agm/core';
 import { EmployeeTableComponent } from './facilities/employee-details/search-employee/employee-table/employee-table.component';
 import { NgxPaginationModule } from 'ngx-pagination';
