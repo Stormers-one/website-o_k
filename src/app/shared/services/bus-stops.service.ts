@@ -28,15 +28,16 @@ export class BusStopsService {
         })); return dat;
       })
     });
-    let res
-    for(var _id in this.res_id){
-      res = await new Promise(resolve => { 
-        this.routes.doc(_id).collection('stops').snapshotChanges().subscribe((data)=>{
+    for(var _id of this.res_id){
+      console.log(_id)
+      let res = await new Promise(resolve => { 
+        this.routes.doc(_id).collection('stops').valueChanges().subscribe((data)=>{
+          console.log(data)
           let stops = resolve(data.map((e)=>{
-            const data = e.payload.doc.data()
-            return {...data}
+            const data = e
+            return data
           })); 
-          return stops
+          return(stops)
         });
       });
       this.res.push(res)
