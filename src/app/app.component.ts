@@ -8,7 +8,7 @@ import { FireAuthService } from './shared/services/fire-auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, OnDestroy{
+export class AppComponent implements OnInit, OnDestroy {
   title = 'website-ok';
   signedIn: any;
   // public userAuth: Subscription;
@@ -27,17 +27,18 @@ export class AppComponent implements OnInit, OnDestroy{
     //   }
     // });
     var user = JSON.parse(localStorage.getItem('user')!)
-      if (user!=='null') {
-        this.signedIn = true;
-        console.log("Set true")
-        this.router.navigate(['facilities']);
-      } else {
-        this.signedIn = true;
-        console.log("Set false")
-        this.router.navigate(['signIn']);
-      }
+    console.log(user)
+    if (user !== null && user !=='null' && user.uid !== null) {
+      this.signedIn = true;
+      console.log("Set true")
+      this.router.navigate(['facilities']);
+    } else {
+      this.signedIn = true;
+      console.log("Set false")
+      this.router.navigate(['signIn']);
+    }
   }
-  ngOnInit(){
+  ngOnInit() {
     this.signedIn = this.fs.signedIn
   }
 
@@ -48,7 +49,7 @@ export class AppComponent implements OnInit, OnDestroy{
     this.router.navigate(['signIn'])
     this.fs.signOut()
   }
-  ngOnDestroy(){
+  ngOnDestroy() {
     // if (this.userAuth) this.userAuth.unsubscribe();
   }
 }
