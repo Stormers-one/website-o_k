@@ -1080,7 +1080,7 @@ class AuthGuard {
     }
     canActivate(route, state) {
         if (this.authService.isLoggedIn !== true) {
-            this.router.navigate(['sign-in']);
+            this.router.navigate(['signIn']);
         }
         return true;
     }
@@ -1249,7 +1249,8 @@ class AppComponent {
         //   }
         // });
         var user = JSON.parse(localStorage.getItem('user'));
-        if (user !== 'null') {
+        console.log(user);
+        if (user !== null && user !== 'null' && user.uid !== null) {
             this.signedIn = true;
             console.log("Set true");
             this.router.navigate(['facilities']);
