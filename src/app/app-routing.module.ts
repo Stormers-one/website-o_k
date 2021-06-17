@@ -18,12 +18,13 @@ import { SignInComponent } from './wrapper/sign-in/sign-in.component';
 import { RegisterComponent } from './wrapper/register/register.component';
 import { AppComponent } from './app.component';
 import { TimetableComponent } from './facilities/schedule/display-schedule/timetable/timetable.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'signIn', component: SignInComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'facilities', component: FacilitiesComponent },
+  { path: 'facilities', component: FacilitiesComponent, canActivate: [AuthGuard] },
   { path: 'facilities/tracking', component: TrackingComponent },
   { path: 'facilities/tracking/map', component: MapComponent },
   { path: 'facilities/schedule', component: ScheduleComponent },
