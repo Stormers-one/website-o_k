@@ -23,10 +23,12 @@
         <form action="/action_page.php">
             <div>
                 <label for="bus_type"><br><b>Enter Bus Type</b> </label><br>
-                <select>
+                <select [(ngModel)]="document.bus_type">
                     <option [ngValue]="null" disabled>Choose Bus Type </option>
                     <option [ngValue]="null">Select Bus Type </option>
-                    <option *ngFor="let type of busTypes" type="text" id="new_name" name="new_name">{{type}}</option>
+                    <option *ngFor="let type of busTypes" type="text" id="new_name" name="new_name">
+                        {{type}}
+                    </option>
                 </select>
                 <div *ngIf="!this.validators[0]">
                     <span id="validator">Enter Bus type</span>
