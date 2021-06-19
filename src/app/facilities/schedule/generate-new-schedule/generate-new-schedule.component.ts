@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import Schedule from 'src/app/shared/models/schedule';
 import { ScheduleService } from 'src/app/shared/services/schedule.service';
+import { SuggestAPIService } from 'src/app/shared/services/suggest-api.service';
 
 
 @Component({
@@ -21,8 +22,15 @@ export class GenerateNewScheduleComponent implements OnInit  {
     this._location.back();
   }
 
-  constructor(private router: Router, private _location: Location,private scheduleService: ScheduleService) {
+  constructor(
+    private router: Router,
+     private _location: Location,
+     private scheduleService: ScheduleService,
+     private api: SuggestAPIService) {
     this.schedule=[];
+  }
+  suggestAPI(){
+    this.api.getJSONRepos()
   }
 
   ngOnInit(): void {

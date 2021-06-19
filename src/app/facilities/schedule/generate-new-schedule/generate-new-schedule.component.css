@@ -18,19 +18,19 @@
     font-size: large;
     flex: 1 1 auto;
   }
-  .td-mail{
+  .td-name{
     width: 200px;
     padding: 2px auto;
     align-content: flex-start;
     text-align: start;
   }
-  .td-active{
+  .td-count{
     width: 100px;
     padding: 2px auto;
     text-align: start;
     align-content: flex-start;
   }
-  .td-desig{
+  .td-status{
     width: 100px;
     padding: 2px auto;
     text-align: start;
@@ -69,4 +69,22 @@
   
   #noData{
     color: red;
+  }
+
+  .buttonGenerate>button{
+    height: 75px;
+    width: 75px;
+    border-radius: 10px;
+    border: rgb(228, 81, 81);
+    color: whitesmoke;
+    background-color: rgba(228, 81, 81, 0.753);
+    cursor: pointer;  
+  }
+
+  .buttonGenerate>button:hover{
+    background-color: rgba(228, 81, 81, 0.925);
+  }
+
+  .vspacer{
+    height: 20px;
   }
