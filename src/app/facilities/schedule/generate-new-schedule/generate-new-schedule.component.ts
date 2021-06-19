@@ -28,9 +28,17 @@ export class GenerateNewScheduleComponent implements OnInit  {
      private scheduleService: ScheduleService,
      private api: SuggestAPIService) {
     this.schedule=[];
+    this.loading = false;
   }
-  suggestAPI(){
-    this.api.getJSONRepos()
+  loading;
+  async suggestAPI(){
+    this.loading = true;
+    let res = await new Promise(
+      (resolve, reject)=>{
+        resolve(this.api.getJSONRepos())
+      }
+    ) 
+    this.loading = false
   }
 
   ngOnInit(): void {
@@ -43,9 +51,7 @@ export class GenerateNewScheduleComponent implements OnInit  {
       });
     });
   }
-  
   buttonPressed() {
     console.log("Button pressed");
   }
-
 }

@@ -6,8 +6,8 @@ import { Injectable } from '@angular/core';
 export class SuggestAPIService {
 
   constructor() { }
-  getJSONRepos() {
-    return fetch('http://34.93.246.194/api/v1/suggest').then(response => response.json());
+  async getJSONRepos() {
+    return await fetch('http://34.93.246.194/api/v1/suggest').then(response => response.json());
   }
 
 }

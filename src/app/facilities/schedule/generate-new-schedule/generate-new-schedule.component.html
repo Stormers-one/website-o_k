@@ -46,11 +46,13 @@
     <div class = "vspacer">
 
     </div>
-    <div class="container-row">
+    <div class="container-row-generator">
         <div class='buttonGenerate'>
-            <button (click)='suggestAPI()'>
+            <button (click)='suggestAPI()' *ngIf='!loading'>
                 Generate 
             </button>
+            <div class = 'loader' *ngIf='loading'>
+            </div>
         </div>
     </div> 
 </div>

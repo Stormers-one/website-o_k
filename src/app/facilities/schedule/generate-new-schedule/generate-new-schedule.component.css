@@ -81,10 +81,31 @@
     cursor: pointer;  
   }
 
+  .buttonGenerate>div{
+    height: 75px;
+    width: 75px;
+    border-radius: 10px;
+    border: rgb(228, 81, 81);
+    color: whitesmoke;
+    background-color: rgba(228, 81, 81, 0.753);
+    cursor: not-allowed  
+  }
+
   .buttonGenerate>button:hover{
     background-color: rgba(228, 81, 81, 0.925);
   }
 
   .vspacer{
     height: 20px;
+  }
+
+  .container-row-generator {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    position: relative;
   }
